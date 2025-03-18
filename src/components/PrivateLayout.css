@@ -1,0 +1,28 @@
+/* Set the body and html to cover the entire viewport */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #212121; /* Make sure the body is also dark */
+  color: #e8e8e8; /* Optional: set a default font color */
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.private-layout {
+  display: flex;
+  min-height: 100vh; /* Ensure the layout fills the viewport height */
+  background-color: #212121; /* Dark background */
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling only inside the main content if necessary */
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: #212121;
+}

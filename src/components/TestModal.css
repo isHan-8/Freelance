@@ -1,0 +1,66 @@
+/* src/components/TestModal.css */
+
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: #212121; /* Changed to #212121 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    outline: none;
+    color: #e8e8e8; /* Changed text color to #e8e8e8 */
+  }
+  
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Ensure form labels and text are #e8e8e8 */
+  .Modal h2 {
+    color: #e8e8e8;
+  }
+  
+  .Modal p {
+    color: #e8e8e8;
+  }
+  
+  /* Adjust radio button labels */
+  .text-e8e8e8 {
+    color: #e8e8e8;
+  }
+  
+  /* Progress Bar Styling */
+  .progress {
+    height: 20px;
+    background-color: #444444; /* Darker background for progress bar */
+  }
+  
+  .progress-bar {
+    background-color: #1db954; /* Vibrant color for progress */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Introductory Container */
+  .intro-container {
+    text-align: center;
+  }
+  
+  .intro-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .intro-container p {
+    margin-bottom: 15px;
+  }
+  

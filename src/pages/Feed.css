@@ -1,0 +1,8 @@
+/* General Layout */
+.appLayout {
+  display: flex;
+  height: 100vh;
+  width: 130%;
+  background-color: #f0f2f5;
+}
+

@@ -1,0 +1,27 @@
+/* src/pages/RateUser.css */
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding: 20px;
+  }
+  
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+  
+  .star-rating label {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .star-rating input[type="radio"]:checked ~ label {
+    color: #f7c508;
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: #f7c508;
+  }
+  

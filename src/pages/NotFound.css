@@ -1,0 +1,27 @@
+/* src/pages/NotFound.css */
+
+.notfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    color: #343a40;
+  }
+  
+  .notfound-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .notfound-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .notfound-container .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  

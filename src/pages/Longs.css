@@ -1,0 +1,17 @@
+/* src/pages/Longs.css */
+
+/* Styles for the Longs page */
+
+.card {
+    background-color: #2c2c2c;
+  }
+  
+  .card-title, .card-text {
+    color: #e8e8e8;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  

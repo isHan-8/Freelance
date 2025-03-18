@@ -1,0 +1,238 @@
+/* Left Navigation */
+.leftNavBar {
+  background-color: #f5f5f5;
+  width: 17%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content stretches to the bottom */
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for resizing */
+}
+
+.profileSection {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -50px; /* Adjust this value as needed to shift it right */
+}
+
+.profilePicContainer {
+  position: relative;
+  margin-left: -50px;
+}
+
+.profilePic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.overlayPic {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  left: 50px;
+  border: 2px solid white;
+}
+
+.using {
+  font-size: 22px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: black;
+}
+
+.username {
+  font-size: 12px;
+  color: black;
+  margin-top: -10px;
+}
+
+.navMenu {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.bottomMenu {
+  margin-top: auto; /* Positions at the bottom */
+  width: 90%;
+}
+
+.menuItem {
+  padding: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+  color: black;
+  width: 100%;
+  text-align: left;
+  display: block;
+  margin-left: 30px;
+  gap: 10px;
+  margin-bottom: 12px; /* Adds vertical spacing between elements */
+}
+
+.menuItem1 {
+  padding: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+  color: black;
+  width: 100%;
+  text-align: left;
+  display: block;
+  margin-left: 30px;
+}
+
+.hoverEffect:hover {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.active {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.menuIcon {
+  margin-right: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.centertext {
+  font-size: 36px;
+  color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .leftNavBar {
+    width: 20%; /* Slightly reduced width for tablets */
+    padding: 15px;
+  }
+
+  .profilePic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .overlayPic {
+    width: 60px;
+    height: 60px;
+    left: 40px;
+  }
+
+  .menuItem,
+  .menuItem1 {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .using {
+    font-size: 20px;
+  }
+
+  .username {
+    font-size: 11px;
+  }
+
+  .navMenu {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftNavBar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .profileSection {
+    margin-left: 0;
+  }
+
+  .menuItem,
+  .menuItem1 {
+    font-size: 14px;
+    margin-left: 0;
+    margin-bottom: 6px; /* Smaller gap between items */
+  }
+
+  .using {
+    font-size: 18px;
+  }
+
+  .username {
+    font-size: 10px;
+  }
+
+  .menuIcon {
+    font-size: 18px;
+  }
+
+  .navMenu {
+    width: 100%;
+  }
+
+  .bottomMenu {
+    margin-top: 10px;
+  }
+
+  /* Add a hamburger icon for mobile */
+  .menuItem1 {
+    display: none; /* Optionally hide some items */
+  }
+}
+
+@media (max-width: 480px) {
+  .leftNavBar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .profilePic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .overlayPic {
+    width: 50px;
+    height: 50px;
+    left: 35px;
+  }
+
+  .using {
+    font-size: 16px;
+  }
+
+  .username {
+    font-size: 10px;
+  }
+
+  .menuItem,
+  .menuItem1 {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .menuItem1 {
+    display: block;
+  }
+}

@@ -1,0 +1,48 @@
+/* src/pages/EventDetails.css */
+.carousel-item {
+    max-height: 500px;
+  }
+  
+.event-details-page {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .event-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  
+  .event-description {
+    margin-top: 20px;
+  }
+  
+  .host-details {
+    margin-top: 20px;
+  }
+  
+  .host-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .price-ranges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .price-range-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Add styles for management buttons */
+  .host-info .btn-secondary,
+  .host-info .btn-danger {
+    margin-left: 10px;
+  }
+  

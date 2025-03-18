@@ -1,0 +1,216 @@
+/* src/pages/Profile.css */
+.container{
+  margin-left: 50px; /* Adjust this value based on the width of your side menu */
+
+}
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.profile-stats {
+  margin-top: 10px;
+}
+
+.profile-stats .stat-number {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  color: #e8e8e8; /* Changed color */
+}
+
+.profile-stats .stat-label {
+  margin-bottom: 0;
+  color: #e8e8e8; /* Changed color */
+}
+
+.average-rating .rating-number {
+  font-size: 1.5em;
+}
+
+.profile-bio {
+  margin-top: 15px;
+}
+
+.profile-website {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.section-buttons .btn {
+  min-width: 100px;
+}
+
+.section-buttons .btn.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.post-grid .card {
+  background-color: #2c2c2c;
+  color: #e8e8e8;
+}
+
+.rating-section .card {
+  background-color: #2c2c2c;
+}
+
+.trait-item .trait-circle {
+  width: 80px;
+  height: 80px;
+  border: 5px solid;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trait-item .trait-rating {
+  font-size: 1.5em;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #212121;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  max-height: 80%;
+  overflow-y: auto;
+  color: #e8e8e8;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #e8e8e8;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  opacity: 1;
+}
+
+.user-list .list-group-item {
+  display: flex;
+  align-items: center;
+  background-color: #212121;
+  border: none;
+  color: #e8e8e8;
+}
+
+.user-list .list-group-item:not(:last-child) {
+  border-bottom: 1px solid #333;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.user-link {
+  color: #e8e8e8;
+  text-decoration: none;
+}
+
+.user-link:hover {
+  text-decoration: underline;
+}
+
+/* Additional styles for stat labels and numbers */
+.profile-stats .stat-number,
+.profile-stats .stat-label {
+  color: #e8e8e8;
+}
+
+/* src/pages/Profile.css */
+
+.rating-section {
+  margin-top: 20px;
+}
+
+.rating-section .list-group-item {
+  background-color: #f8f9fa;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.rating-section .list-group-item strong {
+  font-size: 1.1em;
+}
+
+.rating-section .list-group-item p {
+  margin: 5px 0;
+}
+
+.rating-section .list-group-item span {
+  font-size: 1.5em;
+  color: #ffc107;
+}
+
+/* src/pages/Profile.css */
+
+.trait-section {
+  margin-top: 20px;
+}
+
+.trait-item .trait-circle {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #007bff;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trait-item .trait-rating {
+  font-size: 1.5em;
+}
+
+.trait-item p {
+  margin-top: 10px;
+}
+
+.trait-item .text-muted {
+  font-size: 0.9em;
+}
