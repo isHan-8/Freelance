@@ -1,55 +1,98 @@
-import React from "react";
-import "./LeftNavBar.css"; // You can create a separate CSS file if you need
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./ProfileSection.css";
+import Left from "./Left";
 
-import {
-  MdOutlineExplore,
-  MdMessage,
-  MdSearch,
-  MdNotifications,
-  MdPerson,
-} from "react-icons/md"; // Import the necessary icons
-import { TfiMenu } from "react-icons/tfi";
+const Profile = () => {
+  const [activeTab, setActiveTab] = useState("POSTS");
 
-function LeftNavBar() {
+  const renderContent = () => {
+    switch (activeTab) {
+      case "POSTS":
+        return (
+          <div className="content">
+            <div className="images-row">
+              <img
+                src="https://via.placeholder.com/300x200"
+                alt="Post 1"
+                className="post-image"
+              />
+              <img
+                src="https://via.placeholder.com/300x200"
+                alt="Post 2"
+                className="post-image"
+              />
+              <img
+                src="https://via.placeholder.com/300x200"
+                alt="Post 3"
+                className="post-image"
+              />
+            </div>
+            <p>This is the POSTS content with three example images.</p>
+          </div>
+        );
+      case "COLLABORATE":
+        return <div className="content">This is the COLLABORATE content.</div>;
+      case "ABOUT ME":
+        return <div className="content">This is the ABOUT ME content.</div>;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="leftNavBar">
-      <div className="profileSection">
-        <div className="profilePicContainer">
-          <img src="./logo192.png" alt="Mark Henry" className="profilePic" />
-          <img src="./logo192.png" alt="Overlay" className="overlayPic" />
-        </div>
-        <h4 className="using">Mark Henry</h4>
-        <p className="username">@thebbhenry</p>
-      </div>
-      <div className="navMenu">
-        <div className="menuItem hoverEffect active">
-          <MdOutlineExplore className="menuIcon" /> Explore
-        </div>
-        <div className="menuItem hoverEffect">
-          <MdMessage className="menuIcon" />
-          <Link to="/chat" style={{ textDecoration: "none", color: "inherit" }}>
-            Messages
-          </Link>
+    <div className="profile-page">
+      <Left />
+      <div className="profile-container">
+        {/* Profile Header and Content */}
+        <div className="header">
+          <div className="profile-picture"></div>
+          <div className="profile-info">
+            <h1 className="heading">BRIAN DAVES</h1>
+            <p className="headingg">@davey_brian</p>
+            <div className="stats">
+              <div className="stat-item">
+                <span className="stat-number">90</span>
+                <span className="stat-label">POSTS</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">4.5k</span>
+                <span className="stat-label">FOLLOWERS</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">4.7</span>
+                <span className="stat-label">SCORE</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="menuItem hoverEffect">
-          <MdSearch className="menuIcon" /> Search
+        {/* Footer Tabs */}
+        <div className="footer">
+          <div
+            className={`footer-item ${activeTab === "POSTS" ? "active" : ""}`}
+            onClick={() => setActiveTab("POSTS")}
+          >
+            POSTS
+          </div>
+          <div
+            className={`footer-item ${activeTab === "COLLABORATE" ? "active" : ""}`}
+            onClick={() => setActiveTab("COLLABORATE")}
+          >
+            COLLABORATE
+          </div>
+          <div
+            className={`footer-item ${activeTab === "ABOUT ME" ? "active" : ""}`}
+            onClick={() => setActiveTab("ABOUT ME")}
+          >
+            ABOUT ME
+          </div>
         </div>
-        <div className="menuItem hoverEffect">
-          <MdNotifications className="menuIcon" /> Notifications
-        </div>
-      </div>
-      <div className="bottomMenu">
-        <div className="menuItem1 hoverEffect">
-          <TfiMenu className="menuIcon" /> More
-        </div>
-        <div className="menuItem1 hoverEffect">
-          <MdPerson className="menuIcon" /> Profile
-        </div>
+
+        {/* Render the content based on active tab */}
+        <div className="content-container">{renderContent()}</div>
       </div>
     </div>
   );
-}
+};
 
-export default LeftNavBar;
+export default Profile;

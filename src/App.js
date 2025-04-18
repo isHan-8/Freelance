@@ -40,6 +40,11 @@ import { AuthProvider } from './context/AuthContext';
 import Chat from './pages/Chat';
 import ProfileSection from './pages/ProfileSection';
 import Filter from './pages/Filter';
+import Event from './pages/Event';
+import LoginSignup from './pages/LoginSignup'
+import OriginalLogin from './pages/OriginalLogin'
+import Indexing from './pages/Indexing';
+import BookingDetails from './pages/BookingDetails';
 function App() {
   return (
     <AuthProvider>
@@ -59,7 +64,11 @@ function App() {
             <Route path="/chat" element={<Chat />} />
             <Route path="/profiling" element={<ProfileSection />} />
             <Route path="/filter" element={<Filter />} />
-
+            <Route path="/event" element={<Event />} />
+            <Route path="/loging" element={<LoginSignup />} />
+            <Route path="/Log" element={<OriginalLogin />} />
+            <Route path="/eventing" element={<Indexing/>} />
+            <Route path="/booking-details" element={<BookingDetails/>} />
             <Route path="/profile/:username" element={<Profile />} />
             <Route path="/edit_profile" element={<EditProfile />} />
             <Route path="/create_post" element={<CreatePost />} />

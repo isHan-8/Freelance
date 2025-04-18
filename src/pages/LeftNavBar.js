@@ -1,5 +1,5 @@
 import React from "react";
-import "./LeftNavBar.css"; // You can create a separate CSS file if you need
+import "./LeftNavBar.css";
 import { Link } from "react-router-dom";
 
 import {
@@ -8,7 +8,7 @@ import {
   MdSearch,
   MdNotifications,
   MdPerson,
-} from "react-icons/md"; // Import the necessary icons
+} from "react-icons/md";
 import { TfiMenu } from "react-icons/tfi";
 
 function LeftNavBar() {
@@ -22,30 +22,37 @@ function LeftNavBar() {
         <h4 className="using">Mark Henry</h4>
         <p className="username">@thebbhenry</p>
       </div>
+
       <div className="navMenu">
         <div className="menuItem hoverEffect active">
-          <MdOutlineExplore className="menuIcon" /> Explore
-        </div>
-        <div className="menuItem hoverEffect">
-          <MdMessage className="menuIcon" />
-          <Link to="/chat" style={{ textDecoration: "none", color: "inherit" }}>
-            Messages
-          </Link>
+          <MdOutlineExplore className="menuIcon" />
+          <span className="menuText">Explore</span>
         </div>
 
         <div className="menuItem hoverEffect">
-          <MdSearch className="menuIcon" /> Search
+          <MdMessage className="menuIcon" />
+          <Link to="/chat" className="menuText">Messages</Link>
         </div>
+
         <div className="menuItem hoverEffect">
-          <MdNotifications className="menuIcon" /> Notifications
+          <MdSearch className="menuIcon" />
+          <span className="menuText">Search</span>
+        </div>
+
+        <div className="menuItem hoverEffect">
+          <MdNotifications className="menuIcon" />
+          <span className="menuText">Notifications</span>
         </div>
       </div>
+
       <div className="bottomMenu">
         <div className="menuItem1 hoverEffect">
-          <TfiMenu className="menuIcon" /> More
+          <TfiMenu className="menuIcon" />
+          <span className="menuText">More</span>
         </div>
         <div className="menuItem1 hoverEffect">
-          <MdPerson className="menuIcon" /> Profile
+          <MdPerson className="menuIcon" />
+          <span className="menuText">Profile</span>
         </div>
       </div>
     </div>

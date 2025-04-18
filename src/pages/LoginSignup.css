@@ -1,0 +1,255 @@
+/* Wrapper fills screen and centers everything */
+.LoginPage__Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f6f5f7;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.Loginn__Container {
+  position: relative;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Form containers */
+.Loginn__SignUpContainer,
+.Loginn__SignInContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.Loginn__SignUpContainer[data-signin-in="false"] {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.Loginn__SignInContainer[data-signin-in="false"] {
+  transform: translateX(100%);
+}
+
+/* Overlay container */
+.Loginn__OverlayContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.Loginn__OverlayContainer[data-signin-in="false"] {
+  transform: translateX(-100%);
+}
+
+/* Overlay itself */
+.Loginn__Overlay {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.Loginn__Overlay[data-signin-in="false"] {
+  transform: translateX(50%);
+}
+
+/* Panels inside overlay */
+.Loginn__OverlayPanel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.Loginn__LeftOverlayPanel {
+  transform: translateX(-20%);
+}
+
+.Loginn__RightOverlayPanel {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Buttons */
+.Loginn__GhostButton {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.Loginn__Button {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+.Loginn__Button:active {
+  transform: scale(0.95);
+}
+
+.Loginn__Button:focus {
+  outline: none;
+}
+
+/* Link anchor */
+.Loginn__Anchor {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+/* RESPONSIVE: scale everything down but keep layout intact */
+@media (max-width: 956px) {
+  .Loginn__Container {
+    width: 65%;
+    min-height: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .Loginn__SignUpContainer,
+  .Loginn__SignInContainer {
+    padding: 30px 20px;
+    width: 10%;
+  }
+
+  .Loginn__OverlayContainer {
+    width: 10%;
+    left: 0;
+  }
+
+  .Loginn__Overlay {
+    width: 100%;
+    left: -100%;
+  }
+
+  .Loginn__OverlayPanel {
+    padding: 0 20px;
+    width: 50%;
+  }
+
+  .Loginn__Button {
+    font-size: 11px;
+    padding: 10px 30px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .LoginPage__Wrapper {
+    padding: 10px;
+  }
+
+  .Loginn__Anchor {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Loginn__Container {
+    width: 100%;
+    min-height: 380px;
+  }
+
+  .Loginn__Button {
+    padding: 10px 20px;
+    font-size: 10px;
+  }
+
+  .Loginn__OverlayPanel {
+    padding: 0 10px;
+  }
+}
+/* RESPONSIVE: scale everything down but keep layout intact */
+@media (max-width: 990px) {
+  .Loginn__Container {
+    width: 60%; /* ⬅️ Decreased width here */
+    min-height: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .Loginn__SignUpContainer,
+  .Loginn__SignInContainer {
+    padding: 30px 20px;
+    width: 10%;
+  }
+
+  .Loginn__OverlayContainer {
+    width: 10%;
+    left: 0;
+  }
+
+  .Loginn__Overlay {
+    width: 100%;
+    left: -100%;
+  }
+
+  .Loginn__OverlayPanel {
+    padding: 0 20px;
+    width: 50%;
+  }
+
+  .Loginn__Button {
+    font-size: 11px;
+    padding: 10px 30px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .LoginPage__Wrapper {
+    padding: 10px;
+  }
+
+  .Loginn__Anchor {
+    font-size: 12px;
+  }
+}

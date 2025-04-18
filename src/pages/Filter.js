@@ -1,5 +1,6 @@
 import React, { useRef , useState  } from "react";
 import "./filter.css";
+import { IoSearchSharp } from "react-icons/io5";
 
 function Filter() {
 
@@ -24,12 +25,25 @@ function Filter() {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
-
+  const cityImages = {
+    mumbai: "https://images.unsplash.com/photo-1580581096469-8afb38d3dbd5",
+    delhi: "https://images.unsplash.com/photo-1600784299089-14ba999b35b2",
+    bangalore: "https://images.unsplash.com/photo-1554080353-a576cf803bfa",
+    chennai: "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+    hyderabad: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90",
+    kolkata: "https://images.unsplash.com/photo-1607083203956-01c8d1f8a62e",
+    jaipur: "https://images.unsplash.com/photo-1589645221675-3e3393b08478",
+    pune: "https://images.unsplash.com/photo-1586199742238-c7a4c6815e48",
+    // Add more as needed
+  };
+  
   return (
     <div className="app">
     <header className="app-header">
       <div className="search-bar">
-        <span className="search-icon">🔍</span>
+      <span className="search-icon">
+        <IoSearchSharp size={34} />
+      </span>
         <input
           type="text"
           placeholder="Search for your city"
@@ -41,17 +55,21 @@ function Filter() {
 
        {/* City Icons Section */}
        <section className="city-icons">
-        {filteredCities.length > 0 ? (
-          filteredCities.map((city) => (
-            <div className="city-icon" key={city}>
-              <img src={`${city}-icon.png`} alt={city} />
-              <p>{city.charAt(0).toUpperCase() + city.slice(1)}</p>
-            </div>
-          ))
-        ) : (
-          <p className="no-results">No matching cities found</p>
-        )}
-      </section>
+  {filteredCities.length > 0 ? (
+    filteredCities.map((city) => (
+      <div className="city-icon" key={city}>
+        <img
+          src={`${cityImages[city.toLowerCase()] || 'fallback_image_url_here'}`}
+          alt={city}
+        />
+        <p>{city.charAt(0).toUpperCase() + city.slice(1)}</p>
+      </div>
+    ))
+  ) : (
+    <p className="no-results">No matching cities found</p>
+  )}
+</section>
+
 
       <section className="categories">
         <h2>Categories</h2>

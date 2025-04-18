@@ -1,35 +1,31 @@
-/* Right Sidebar */
 .rightSidebar {
   flex: 0.2;
-  background-color: #f5f5f5;
-  padding: 20px;
-  color: black; /* Text is now black */
-  height: 100vh; /* Set height to viewport height */
-  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: transparent; /* ensures no background at all */
+  color: black;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-/* Customizing the scrollbar for WebKit browsers (Chrome, Safari) */
 .rightSidebar::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
+  display: none;
 }
 
-/* Story Section */
 .storySection {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Enable snapping while scrolling */
-  width: 260px; /* Adjust to show two items */
-  gap: 30px; /* Space between items */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 260px; 
+  gap: 30px;
 }
 
 .storySection::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
+  display: none;
 }
 
 .imageContainer {
   position: relative;
-  min-width: 100px; /* Adjust width based on your image size */
-  scroll-snap-align: start; /* Snap alignment for scrolling */
+  min-width: 100px;
+  scroll-snap-align: start;
 }
 
 .storyImage {
@@ -46,7 +42,7 @@
   border-radius: 50%;
   bottom: 5px;
   left: 33px;
-  border: 2px solid white; /* Optional for profile image */
+  border: 2px solid white;
 }
 
 .suggest {
@@ -57,7 +53,7 @@
 .interestsSection h4 {
   margin-bottom: 1px;
   font-weight: bold;
-  color: black; /* Text is now black */
+  color: black;
 }
 
 .suggestionProfile {
@@ -65,7 +61,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3px;
-  color: black; /* Text is now black */
+  color: black;
 }
 
 .suggestionAvatar {
@@ -81,13 +77,12 @@
 
 .suggestionsList {
   display: flex;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  gap: 15px; /* Space between cards */
+  overflow-x: auto;
+  gap: 15px;
   padding: 23px;
-  scroll-snap-type: x mandatory; /* Smooth scrolling */
+  scroll-snap-type: x mandatory;
 }
 
-/* Suggestion Profile (Card) */
 .suggestionProfile {
   display: flex;
   flex-direction: column;
@@ -97,9 +92,9 @@
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 250px; /* Width of each card */
+  min-width: 250px;
   max-width: 250px;
-  scroll-snap-align: start; /* Cards snap to start when scrolling */
+  scroll-snap-align: start;
   position: relative;
 }
 
@@ -116,7 +111,7 @@
 }
 
 .suggestionDetails {
-  text-align: center; /* Align details in the center */
+  text-align: center;
 }
 
 .suggestionName {
@@ -146,12 +141,10 @@
   background-color: #0d8ce2;
 }
 
-/* Hide the default scrollbar in WebKit browsers (Chrome, Safari) */
 .suggestionsList::-webkit-scrollbar {
   display: none;
 }
 
-/* Vibe score container */
 .vibeScore {
   position: absolute;
   top: 10px;
@@ -163,7 +156,6 @@
   color: black;
 }
 
-/* Question mark icon */
 .questionMark {
   background-color: transparent;
   border: 1px solid #ccc;
@@ -181,7 +173,6 @@
   margin-right: 5px;
 }
 
-/* Vibe score text (hidden initially) */
 .vibeText {
   font-size: 10px;
   color: black;
@@ -196,7 +187,6 @@
   visibility: visible;
 }
 
-/* Tooltip (small pop-up menu) */
 .tooltip {
   position: absolute;
   top: -8px;
@@ -233,50 +223,50 @@
   visibility: visible;
 }
 
-/* Interest Icons */
 .interestIcons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
-  gap: 0; /* Remove both vertical and horizontal gaps */
-  width: 65%; /* Ensure the grid takes full width of its container */
-  justify-items: start; /* Align grid items to the left */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 65%;
+  justify-items: start;
 }
 
 .interestImage {
-  width: 100%; /* Keep each image at full width of its grid cell */
-  height: auto; /* Maintain the aspect ratio */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  border: 10px solid transparent; /* Make space for the border */
-  border-image: url('https://images.unsplash.com/photo-1614350292382-c448d0110dfa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hbGx8ZW58MHx8MHx8fDA%3D') 30 stretch; /* Custom curly border */
-  border-radius: 10px; /* Optional: add rounded corners */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 10px solid transparent;
+  border-image: url('https://images.unsplash.com/photo-1614350292382-c448d0110dfa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hbGx8ZW58MHx8MHx8fDA%3D') 30 stretch;
+  border-radius: 10px;
 }
-
-
+/* Hide carousel on desktop */
+.storyCarouselMobile {
+  display: none;
+}
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  /* Adjust story section width */
   .storySection {
-    width: 100%; /* Full width for tablets */
-    gap: 15px; /* Reduced gap between items */
+    width: 100%;
+    gap: 15px;
   }
 
   .suggestionsList {
-    gap: 10px; /* Reduce gap between cards */
+    gap: 10px;
     padding: 20px;
   }
 
   .suggestionProfile {
-    min-width: 220px; /* Reduce card width */
+    min-width: 220px;
     max-width: 220px;
   }
 
   .vibeScore {
-    font-size: 12px; /* Smaller font size */
+    font-size: 12px;
   }
 
   .suggestionAvatar {
     width: 45px;
-    height: 45px; /* Adjust avatar size */
+    height: 45px;
   }
 
   .suggestionName {
@@ -289,7 +279,6 @@
 }
 
 @media (max-width: 768px) {
-  /* Story section width for mobile */
   .storySection {
     width: 100%;
     gap: 10px;
@@ -302,7 +291,7 @@
 
   .suggestionProfile {
     min-width: 180px;
-    max-width: 180px; /* Further reduce card width */
+    max-width: 180px;
   }
 
   .suggestionAvatar {
@@ -324,7 +313,6 @@
 }
 
 @media (max-width: 480px) {
-
   .storySection {
     width: 100%;
     gap: 5px;
@@ -336,7 +324,7 @@
   }
 
   .suggestionProfile {
-    min-width: 150px; /* Smallest card size */
+    min-width: 150px;
     max-width: 150px;
   }
 
@@ -358,3 +346,46 @@
     font-size: 12px;
   }
 }
+@media (max-width: 964px) {
+  .rightSidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 100;
+    /* REMOVE this: */
+    /* background-color: #f5f5f5; */
+    background-color: transparent; /* optional if you want consistency */
+  }
+}
+
+/* Show only below 838px */
+/* Show only below 838px */
+@media (max-width: 768px) {
+  .rightSidebar {
+    display: none !important;
+  }
+}
+@media (max-width: 838px) {
+  .rightSidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: -9999 !important;
+    background: none !important; /* ✅ blocks all background properties */
+    background-color: transparent !important; /* ✅ ensures transparent bg */
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+

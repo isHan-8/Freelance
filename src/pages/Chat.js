@@ -1,198 +1,155 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./chat.css"; // Assuming you have the updated CSS
-import { FaPaperPlane, FaVideo, FaImage } from "react-icons/fa"; // Importing the icons
+import React, { useState } from "react";
+import "./chat.css";
 import LeftNavBar from "./LeftNavBar";
+import EmojiPicker from "emoji-picker-react";
+import { FaSmile } from "react-icons/fa"; // Emoji button
+import { FaMicrophone } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
-const Chat = () => {
-  const [showSendButton, setShowSendButton] = useState(false);
-  const [message, setMessage] = useState("");
-  const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState({
-    name: "",
-    img: "",
-    uid: "",
-    secretKey: "",
-  });
-  const [messages, setMessages] = useState([]);
-  const messageRef = useRef();
-  const divRef = useRef();
+const dummyChats = [
+  {
+    id: 1,
+    name: "Groups",
+    username: "buddy_father",
+    avatar:
+      "https://plus.unsplash.com/premium_photo-1669839774885-b1958e625b5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8anBnfGVufDB8fDB8fHww",
+    lastMessage: "sent an attachment.",
+    time: "1h",
+    messages: ["Hey bro", "Whats up?"],
+    unread: true,
+  },
+  {
+    id: 2,
+    name: "__ÀR__",
+    username: "akshat_rodwal",
+    avatar:
+      "https://plus.unsplash.com/premium_photo-1669839774885-b1958e625b5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8anBnfGVufDB8fDB8fHww",
+    lastMessage: "You sent an attachment.",
+    time: "1h",
+    messages: ["Sure, Ill send it"],
+    unread: false,
+  },
+  {
+    id: 3,
+    name: "Rithik Agarwal",
+    username: "rithik_official",
+    avatar:
+      "https://plus.unsplash.com/premium_photo-1669839774885-b1958e625b5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8anBnfGVufDB8fDB8fHww",
+    lastMessage: "sent an attachment.",
+    time: "1w",
+    messages: ["ishan"],
+    unread: true,
+  },
+  {
+    id: 4,
+    name: "ishan",
+    username: "ishan_official",
+    avatar:
+      "https://plus.unsplash.com/premium_photo-1669839774885-b1958e625b5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8anBnfGVufDB8fDB8fHww",
+    lastMessage: "sent an attachment.",
+    time: "1w",
+    messages: ["i am doing code"],
+    unread: true,
+  },
+];
 
-  // Mock users data
-  const mockUsers = [
-    {
-      uid: "1",
-      name: "John Doe",
-      profileImg: "https://randomuser.me/api/portraits/men/1.jpg",
-      secretKey: "secret1",
-    },
-    {
-      uid: "2",
-      name: "Jane Smith",
-      profileImg: "https://randomuser.me/api/portraits/women/2.jpg",
-      secretKey: "secret2",
-    },
-    {
-      uid: "3",
-      name: "Alice Brown",
-      profileImg: "https://randomuser.me/api/portraits/women/3.jpg",
-      secretKey: "secret3",
-    },
-  ];
-
-  // Mock messages data
-  const mockMessages = [
-    {
-      sender: "1",
-      message: "Hey, how are you?",
-      secretKey: "secret1",
-      time: "10:30 AM",
-    },
-    { sender: "2", message: "Hello!", secretKey: "secret2", time: "10:31 AM" },
-    {
-      sender: "3",
-      message: "Hi there!",
-      secretKey: "secret3",
-      time: "10:32 AM",
-    },
-  ];
-
-  // Set up initial users and mock messages
-  useEffect(() => {
-    setUsers(mockUsers);
-  }, []);
-
-  // Load messages for the selected user
-  useEffect(() => {
-    if (selectedUser.secretKey) {
-      const filteredMessages = mockMessages.filter(
-        (msg) => msg.secretKey === selectedUser.secretKey
-      );
-      setMessages(filteredMessages);
-    }
-  }, [selectedUser]);
-
-  // Handle message input change
-  const messageHandler = (event) => {
-    setMessage(event.target.value);
-    setShowSendButton(event.target.value.length > 0);
+function ChatApp() {
+  const [selectedChat, setSelectedChat] = useState(dummyChats[0]);
+  const [showPicker, setShowPicker] = useState(false);
+  const [selectedEmoji, setSelectedEmoji] = useState(null);
+  const handleEmojiClick = (emojiData) => {
+    setSelectedEmoji(emojiData.emoji);
+    setShowPicker(false);
   };
-
-  // Handle Enter key press for sending the message
-  const onKeyHandler = (e) => {
-    if (message.length > 0 && e.charCode === 13) {
-      sendMessage();
-    }
-  };
-
-  // Handle sending a new message
-  const sendMessage = () => {
-    const newMessage = {
-      sender: "currentUser", // In a real app, this would be the logged-in user's ID
-      message: message,
-      secretKey: selectedUser.secretKey,
-      time: new Date().toLocaleTimeString(),
-    };
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
-    setMessage("");
-    setShowSendButton(false);
-  };
-
-  // Load selected user and their messages
-  const loadMessagesHandler = (user) => {
-    setSelectedUser(user);
-    setMessages(mockMessages.filter((msg) => msg.secretKey === user.secretKey));
-  };
-
   return (
-    <>
+    <div className="messenger-container">
+      <LeftNavBar />
+      {/* Left sidebar */}
+      <div className="sidebar">
+        <div className="sidebar-header">
+          <h2>ish18an</h2>
+          <MdEdit className="edit-icon" />
+        </div>
 
-    {/* <div className="ishan">
-    <LeftNavBar/> */}
-    <div className="container">
-      {/* Left Sidebar */}
-      <div className="left">
-        {users.length === 0 && <h5 className="nodata">No conversations</h5>}
-        {users.length > 0 && (
-          <ul>
-            {users.map((user) => (
-              <li key={user.uid} onClick={() => loadMessagesHandler(user)}>
-                <span className="imgContainer">
-                  <img alt="profile" src={user.profileImg} />
-                </span>
-                {user.name}
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className="messages-title">
+          <h4>Messages</h4>
+          <p className="requests">Requests</p>
+        </div>
+
+        <div className="chat-list">
+          {dummyChats.map((chat) => (
+            <div
+              key={chat.id}
+              className={`chat-item ${
+                selectedChat.id === chat.id ? "" : ""
+              }`}
+              onClick={() => setSelectedChat(chat)}
+            >
+              <img className="chat-avatar" src={chat.avatar} alt={chat.name} />
+              <div className="chat-info">
+                <div className="chat-name">{chat.name}</div>
+                <div className="chat-last">
+                  {chat.lastMessage} · {chat.time}
+                </div>
+              </div>
+              {chat.unread && <span className="unread-dot" />}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Right Side (Chat Area) */}
-      {selectedUser.secretKey && (
-        <div className="right">
-          <div className="header">
-            <span className="imgContainer">
-              <img alt="profile" src={selectedUser.img} />
-            </span>
-            <div className="header-info">{selectedUser.name}</div>
+      {/* Right content */}
+      <div className="chat-content">
+        <div className="chat-header">
+          <div className="selected-avatar">
+            <img src={selectedChat.avatar} alt={selectedChat.name} />
           </div>
-
-          <div ref={divRef} className="okok">
-            {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={msg.sender === "currentUser" ? "user" : "sender"}
-              >
-                <p>{msg.message}</p>
-                <div className="message-time">{msg.time}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Send Message */}
-          <div className="sendMessage">
-            <div className="input-container">
-              <input
-                ref={messageRef}
-                value={message}
-                onChange={messageHandler}
-                onKeyPress={onKeyHandler}
-                placeholder="Enter Message"
-                type="text"
-              />
-              <div className="input-icons">
-                <button className="icon-btn">
-                  <FaPaperPlane size={20} />
-                </button>{" "}
-                {/* Send icon */}
-                <button className="icon-btn">
-                  <FaVideo size={20} />
-                </button>{" "}
-                {/* Video icon */}
-                <button className="icon-btn">
-                  <FaImage size={20} />
-                </button>{" "}
-                {/* Image icon */}
-              </div>
-            </div>
-            {showSendButton && (
-              <button onClick={sendMessage} className="btn">
-                SEND
-              </button>
-            )}
+          <div>
+            <div className="selected-name">{selectedChat.name}</div>
+            <div className="selected-username">{selectedChat.username}</div>
           </div>
         </div>
-      )}
 
-      {/* No user selected message */}
-      {!selectedUser.secretKey && (
-        <h5 className="nodata">
-          {users.length === 0 ? "No Conversations" : "Select a User"}
-        </h5>
-      )}
+        <div className="chat-messages">
+          <div className="timestamp">8:27 PM</div>
+          {selectedChat.messages.map((msg, idx) => (
+            <div key={idx} className="message-bubble">
+              {msg}
+            </div>
+          ))}
+          <img
+            className="media-thumb"
+            src="https://plus.unsplash.com/premium_photo-1669839774560-f4524492b1d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGpwZ3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="media"
+          />
+        </div>
+
+        <div className="message-input">
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <FaSmile
+              size={24}
+              style={{ cursor: "pointer" }}
+              onClick={() => setShowPicker((prev) => !prev)}
+            />
+
+            {showPicker && (
+              <div style={{ position: "absolute", top: "-500px", zIndex: 10 }}>
+                <EmojiPicker onEmojiClick={handleEmojiClick} />
+              </div>
+            )}
+
+            {selectedEmoji && (
+              <span style={{ marginLeft: "10px", fontSize: "24px" }}>
+                {selectedEmoji}
+              </span>
+            )}
+          </div>
+          <input type="text" placeholder="Message..." />
+          <FaMicrophone className="input-icons" />
+        </div>
+      </div>
     </div>
-    {/* </div> */}
-    </>
   );
-};
+}
 
-export default Chat;
+export default ChatApp;

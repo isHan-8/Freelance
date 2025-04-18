@@ -1,0 +1,396 @@
+/* Messenger Layout */
+.messenger-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fb;
+  color: #1c1e21;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 350px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.edit-icon {
+  cursor: pointer;
+  font-size: 29px;
+  color: #0c0c0c;
+}
+
+/* Notes Row */
+.notes-row {
+  display: flex;
+  gap: 14px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.note {
+  text-align: center;
+}
+
+.note img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid #dcdcdc;
+}
+
+/* Messages Title */
+.messages-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.requests {
+  color: gray;
+  font-weight: normal;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Chat List */
+.chat-list {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-top: 12px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.chat-item:hover,
+.chat-item.active {
+  background-color: #a0afc6;
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.chat-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.chat-last {
+  font-size: 12px;
+  color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Unread Dot */
+.unread-dot {
+  width: 10px;
+  height: 9px;
+  background-color: #16191b;
+  border-radius: 50%;
+  position: absolute;
+  right: 14px;
+}
+
+/* Main Chat Area */
+.chat-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  background-color: #fefefe;
+  height: 100%;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+}
+
+.selected-avatar img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+
+.selected-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.selected-username {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Messages */
+.chat-messages {
+  flex-grow: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timestamp {
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* Message Bubble */
+.message-bubble {
+  background-color: #f1f3f5;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 60%;
+  align-self: flex-start;
+}
+
+.message-bubble.sent {
+  background-color: #daf0ff;
+  align-self: flex-end;
+}
+
+/* Media */
+.media-thumb {
+  width: 200px;
+  border-radius: 12px;
+}
+
+/* Message Input Styling */
+.message-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  background-color: #fff;
+  left: 590px;
+}
+
+.message-input input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  border-radius: 24px;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.message-input input::placeholder {
+  font-style: italic;
+  color: #aaa;
+}
+
+.input-icons {
+  font-size: 20px;
+  color: #555;
+  display: flex;
+  gap: 10px;
+}
+  /* ----------- Below 1200px ----------- */
+@media (max-width: 1200px) {
+  .message-input input {
+    font-size: 15px;
+    padding: 10px 12px;
+    max-width: 110%;
+  }
+
+  .message-input input::placeholder {
+    font-size: 13px;
+  }
+}
+
+/* Tablet and small laptops */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 260px;
+    padding: 12px;
+  }
+
+  .chat-content {
+    padding: 16px;
+  }
+
+  .chat-header {
+    gap: 12px;
+  }
+
+  .chat-name,
+  .selected-name {
+    font-size: 14px;
+  }
+
+  .chat-last,
+  .selected-username {
+    font-size: 12px;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+    font-size: 13.5px;
+  }
+
+  .media-thumb {
+    width: 50%;
+  }
+  .message-input {
+    gap: 8px;
+    padding: 10px;
+ 
+  }
+
+  .message-input input {
+    font-size: 13px;
+    padding: 9px 20px;
+    width: 80%;
+    left: 20px;
+  }
+
+  .input-icons {
+    font-size: 18px;
+  }
+}
+
+/* Mobile View (Below 838px) */
+@media (max-width: 838px) {
+  .messenger-container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 90px;
+    padding: 10px 4px;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .chat-content {
+    flex-grow: 1;
+    height: 100vh;
+    padding: 12px;
+  }
+
+  .chat-header {
+    gap: 10px;
+  }
+
+  .selected-avatar img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .chat-name,
+  .selected-name {
+    font-size: 13.5px;
+  }
+
+  .chat-last,
+  .selected-username {
+    font-size: 11.5px;
+  }
+
+  .message-bubble {
+    font-size: 12px;
+    padding: 10px 14px;
+    max-width: 88%;
+  }
+
+  .message-input input {
+    padding: 10px;
+    font-size: 12.5px;
+  }
+
+  .input-icons {
+    gap: 8px;
+    font-size: 16px;
+  }
+}
+
+/* Smaller Phones (Below 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    display: none; /* Hide sidebar for ultra-small devices */
+  }
+
+  .chat-content {
+    padding: 10px;
+    height: 100vh;
+  }
+
+  .chat-name,
+  .selected-name {
+    font-size: 13px;
+  }
+
+  .chat-last,
+  .selected-username {
+    font-size: 11px;
+  }
+
+  .message-bubble {
+    font-size: 11.5px;
+    padding: 8px 12px;
+    max-width: 95%;
+  }
+
+  .message-input {
+    padding: 8px;
+  }
+
+  .message-input input {
+    font-size: 12px;
+  }
+
+  .input-icons {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,238 @@
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center;
+  justify-content: flex-start;
+  padding: 40px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.event-card {
+  flex: 0 0 60%;
+  height: 20rem !important; 
+  width: 50rem !important;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.8);
+  opacity: 0.6;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  padding: 20px;
+}
+.event-card.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.event-image {
+  height: 110px !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.event-card.selected {
+  border-radius: 2rem 2rem 0rem 0rem !important;
+}
+
+.event-details {
+  margin:auto 0;
+  padding: 1px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-details h2 {
+  font-size: 3.2rem;
+  margin-bottom: -45px;
+  font-weight: 700;
+}
+
+.location span,
+.ratings span {
+  display: flex;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.level {
+  font-size: 0.8rem;
+  color: #cccccc;
+}
+.location{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: -20px;
+}
+.event-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  border-radius: 0 0 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.price-details{
+  color: white;
+  font-size: 1.5rem;
+}
+.ratings{
+  display: flex;
+  margin-top: 1.5rem;
+}
+.user-profile{
+  margin: 5px 10px 0px 0px;
+}
+.heading h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  color: black;
+  margin-top: 8px;
+  margin-bottom: -10px;
+}
+.event-img img{
+  width: 100%;
+  height: 20rem;
+}
+.event-img {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.event-img img {
+  width: 100%;
+  height: 12rem;
+  display: block;
+}
+.event-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0.4, 0.7), 
+    transparent
+  );
+  pointer-events: none;
+}
+
+.search {
+  position: absolute !important;
+  top: 40% !important;
+  left: 50% !important;
+  width: 75% !important;
+  height: 15% !important;
+  transform: translate(-50%, -50%) !important;
+  padding: 20px 30px !important;
+  font-size: 20px !important;
+  border-radius: 10px !important;
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  box-shadow: 0 0 25px rgb(22, 22, 22) !important;
+  color: white !important;
+  z-index: 9999 !important;
+}
+
+.search::placeholder {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 1.5rem !important;
+  text-shadow: 0 0 10px rgb(32, 30, 30) !important;
+  opacity: 1 !important;
+}
+
+.search-icon {
+  display: none !important; /* Hide any icons if needed */
+}
+
+.expanded-details {
+  width: 98.9vw;
+  padding: 20px;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.expanded-details h4 {
+  margin: 10px 0;
+}
+
+.register-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.expanded-details-below {
+  width: 59.6vw;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 73px 20px 20px 20px;
+  margin: -100px auto 30px auto;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.plus-icon {
+  cursor: pointer;
+  color: white;
+  background-color: #9b9999;
+  width: 49px;
+  height: 38px;
+  border-radius: 10px;
+  padding: 8px;
+}
+.details-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(66, 66, 66);
+  margin-left: 13px;
+  margin-right: 62px;
+}
+.expanded-details-below h5{
+  margin: 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+.part2 {
+  position: absolute;
+  top: 150px; 
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}

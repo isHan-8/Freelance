@@ -1,0 +1,204 @@
+
+event-page {
+  position: relative;
+}
+
+.event-bg {
+  height: 12rem;
+  background-image: url("https://plus.unsplash.com/premium_photo-1666863911660-d64fc1022c12?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8anBnfGVufDB8fDB8fHww");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+    max-width: 62rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: transparent; /* Remove background color */
+    border-radius: 15px; /* Add rounded corners */
+    padding: 0.5rem; /* Add padding for better spacing */
+    border: 1px solid white; /* White border around the input */
+    width: 100%; /* Ensure it takes the full width */
+  }
+  
+  .search-bar input {
+    border: none; /* Remove inner border */
+    outline: none; /* Remove outline */
+    flex-grow: 1; /* Ensure it takes full width */
+    padding: 0.1rem 0.5rem; /* Add padding for space around the input */
+    background: transparent; /* Transparent background */
+    color: white; /* Set text color */
+    width: 100%; /* Full width */
+  }
+  
+  .search-bar input::placeholder {
+    color: white; /* White placeholder color */
+    opacity: 1; /* Full opacity for the placeholder */
+  }
+  
+  .search-icon {
+    margin-right: 1rem; /* Adjust margin-right for alignment */
+  }
+  
+  
+  .settings-icon {
+    margin-left: 1rem;
+  }
+  
+.event-title-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.event-title {
+  color: black;
+  font-size: 1.25rem;
+}
+
+.cards-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 3;
+  }
+  
+  .event-card {
+    background-size: cover;
+    background-position: center;
+    width: 42rem;
+    height: 20rem;
+    border-radius: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    background-blend-mode: darken;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+    transform: scale(0.9); 
+  }
+  .slick-center .event-card {
+    transform: scale(1.1); 
+    opacity: 1;
+    z-index: 2;
+  }  
+.event-card-content {
+  width: 100%;
+  padding: 0; /* No padding */
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0; /* No margin at the bottom */
+  margin-top: 0; /* No margin at the top */
+}
+
+.ishan {
+  margin: 0; /* Remove all margins */
+  font-size: 3.35rem;
+  line-height: 1; /* Reduce line height for tighter alignment */
+}
+
+/* Optional - remove any spacing and ensure alignment */
+
+.event-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.event-card-info {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start;
+  gap: 0rem; /* Remove vertical gap */
+  margin-top: -0.5rem; /* Adjust to remove extra space */
+}
+
+.event-details {
+  display: flex;
+  gap: 02rem; /* Adds small gap between location, date, and time */
+  align-items: center;
+}
+.event-details span {
+  margin: 0; /* Remove any margins from spans */
+  font-size: 1rem; /* Adjust size for details */
+  line-height: 1.6; /* Reduce line height for tighter alignment */
+}
+.event-location {
+  margin-right: 0.5rem; /* Adds a small gap after the location */
+}
+
+.event-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Align items at the bottom */
+  padding: 0 1rem;
+  margin-top: -01rem;
+}
+/* Styling for the rating */
+.event-rating-container {
+  flex: 1; /* Ensures the rating container takes available space */
+  display: flex;
+  align-items: center;
+}
+
+
+.event-rating-container {
+  display: flex; /* Flexbox layout */
+  gap: 1rem; /* Add gap between the rating elements */
+  align-items: center; /* Align items vertically centered */
+}
+.event-rating {
+  font-size: 1.2rem; /* Adjust the font size for the rating */
+  color: #ffd700; /* Golden color for the star rating */
+  font-weight: bold;
+}
+
+.event-rating1 {
+  font-size: 1.2rem; /* Adjust the font size for the rating */
+  color: #ffd700; /* Golden color for the star rating */
+  font-weight: bold;
+}
+
+.event-price-container {
+  display: flex;
+  flex-direction: column; /* Stack the price and the "beginner" text vertically */
+  align-items: flex-end; /* Align price and text to the right */
+  justify-content: flex-end; /* Ensure they align at the bottom */
+}
+
+.event-price {
+  font-size: 2rem; /* Make the price larger */
+  font-weight: bold;
+  color: white; /* Set color to white for visibility */
+}
+
+.price-info {
+  font-size: 0.85rem; /* Smaller font size for the additional text */
+  color: #666; /* A lighter gray color for the text */
+  margin-top: -1rem; /* Add a small gap between the price and the text */
+}

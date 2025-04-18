@@ -1,8 +1,10 @@
-/* Center Feed */
 .centerFeed {
   flex: 0.47566;
   padding: 15px;
   overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh; /* or a custom height depending on your layout */
+  box-sizing: border-box;
 }
 
 .centerFeed::-webkit-scrollbar {
@@ -11,19 +13,21 @@
 
 .postBoxFixed {
   position: absolute;
+  z-index: 999; /* High value to layer on top */
+
   flex: 0.5;
   bottom: -5px;
-  left: 47.8%;
+  left: 48%;
   transform: translateX(-50%);
   background-color: #cfc9c9;
   padding: 15px;
-  padding-left: 55px;
+  padding-left: 60px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
   flex-direction: column;
-  width: 49.5%;
+  width: 80%;
   border-bottom: 1px solid #ccc;
   height: 80px;
   transition: height 0.3s ease-in-out;
@@ -53,8 +57,6 @@
   border: 1px solid #ccc;
   margin-bottom: 10px;
   box-sizing: border-box;
-  align-items: center;
-  left: 10px;
 }
 
 .inputContainer {
@@ -63,9 +65,17 @@
   margin-left: -43px;
 }
 
-.inputIcon {
+.inputIcon{
   position: absolute;
-  left: 1px;
+  top: 40%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 30px;
+  left : 10px;
+  pointer-events: none;
+}
+ .inputIconRight {
+  position: absolute;
   top: 40%;
   transform: translateY(-50%);
   height: 30px;
@@ -74,13 +84,7 @@
 }
 
 .inputIconRight {
-  position: absolute;
   right: 80px;
-  top: 40%;
-  transform: translateY(-50%);
-  height: 30px;
-  width: 30px;
-  pointer-events: none;
 }
 
 .postBoxActions {
@@ -260,12 +264,64 @@
 .cardusing {
   font-size: 17px;
 }
+/*  */
+@media (max-width: 1424px) {
+  .postBoxFixed {
+    width: 50%; /* Adjust width for tablets */
+    left: 48%;
+    transform: translateX(-50%);
+  }
 
+ 
+  
+}
+/* Responsive Styles */
+@media (max-width: 1265px) {
+  .postBoxFixed {
+    width: 50%; /* Adjust width for tablets */
+    left: 48%;
+    transform: translateX(-50%);
+  }
+
+  .feedCard {
+    padding: 20px;
+  }
+
+  .postButton {
+    padding: 8px 12px;
+    margin-right: 40px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .feedHeader .userDetails h4 {
+    font-size: 16px;
+  }
+
+  .feedText {
+    font-size: 14px;
+  }
+
+  .postBox input {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+  .moreIconContainer {
+    display: none;
+  }
+  
+}
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .postBoxFixed {
-    width: 60%; /* Adjust width for tablets */
-    left: 50%;
+    width: 47%; /* Adjust width for tablets */
+    left: 51%;
     transform: translateX(-50%);
   }
 
@@ -299,13 +355,57 @@
     font-size: 18px;
   }
 }
-
+@media (max-width: 910px) {
+  .postBoxFixed {
+    width: 47%; /* Adjust width for tablets */
+    left: 51%;
+    transform: translateX(-50%);
+  }
+  .postBoxFixed input {
+    width: 95%;
+    padding: 10px;
+    padding-left: 50px;
+    right: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .inputIconRight {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    height: 30px;
+    width: 30px;
+    right: 24px;
+    pointer-events: none;
+  }
+}
 @media (max-width: 768px) {
   .postBoxFixed {
-    width: 80%; /* Increase width on smaller screens */
-    padding-left: 30px;
+    width: 56%; /* Adjust width for tablets */
+    left: 50%;
+    transform: translateX(-50%);
   }
-
+  .postBoxFixed input {
+    width: 97%;
+    padding: 10px;
+    padding-left: 50px;
+    right: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .inputIconRight {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    height: 30px;
+    width: 30px;
+    right: 18px;
+    pointer-events: none;
+  }
   .postButton {
     width: 100%;
     margin-right: 0;
@@ -387,5 +487,109 @@
 
   .actionButton {
     font-size: 12px;
+  }
+}
+@media (max-width: 760px) {
+  .postBoxFixed {
+    width: 46%; /* Adjust width for tablets */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .postBoxFixed input {
+    width: 97%;
+    padding: 10px;
+    padding-left: 50px;
+    right: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .inputIconRight {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    height: 30px;
+    width: 30px;
+    right: 18px;
+    pointer-events: none;
+  }
+  .postButton {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 10px 15px;
+  }
+
+  .feedCard {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .feedText {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .feedHeader .userDetails h4 {
+    font-size: 14px;
+  }
+
+  .actionButton {
+    font-size: 14px;
+  }
+
+  .postBox input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+}
+@media (max-width: 964px) {
+  .feedCard {
+    width: 102%; /* Wider feed */
+    margin-left: auto;
+    margin-right: 10px; /* Push to the right */
+    padding: 20px;
+  }
+
+  .moreIconContainer {
+    margin-left: auto; /* Align the three dots to the far right */
+    margin-top: 0;
+  }
+ 
+}
+@media (max-width: 838px) {
+  .feedCard {
+    width: 145%; /* Wider feed */
+    margin-left: auto;
+    margin-right: 10px; /* Push to the right */
+    padding: 35px;
+  }
+
+  .moreIconContainer {
+    margin-left: auto; /* Align the three dots to the far right */
+    margin-top: 0;
+  }
+ 
+}
+@media (max-width: 816px) {
+  .feedCard {
+    width: 130%; /* Wider feed */
+    margin-left: auto;
+    margin-right: 10px; /* Push to the right */
+    padding: 20px;
+  }
+
+  .moreIconContainer {
+    margin-left: auto; /* Align the three dots to the far right */
+    margin-top: 0;
   }
 }

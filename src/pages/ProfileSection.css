@@ -339,8 +339,8 @@ body, html {
 
 /* Content Section */
 .content-container {
-  width: 110%; /* Set explicit width to forcefully reduce it */
-  max-width: 848px; /* Optional: Set a maximum width to limit its size */
+  width: 20%; /* Set explicit width to forcefully reduce it */
+  max-width: 560px; /* Optional: Set a maximum width to limit its size */
   background-color: rgb(170, 246, 170); /* No background color for content */
   border-radius: 0 0 12px 12px;
   padding: 25px; /* Increased padding for better content spacing */
@@ -375,3 +375,289 @@ body, html {
   object-fit: cover;
 }
 
+/* Media Queries for Responsiveness */
+
+/* Small Screens */
+@media (max-width: 768px) {
+  body, html {
+     font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+
+  .header {
+     flex-direction: column;
+     gap: 20px;
+     align-items: center;
+     padding: 15px;
+  }
+
+  .profile-picture {
+     width: 100px; /* Adjust profile picture size */
+     height: 100px;
+     margin-left: 0;
+  }
+
+  .profile-info h1 {
+     font-size: 18px; /* Adjust font size */
+  }
+
+  .profile-info p {
+     font-size: 14px; /* Adjust font size */
+  }
+
+  .stats {
+     flex-direction: column;
+     align-items: center;
+  }
+
+  .stat-item {
+     margin-bottom: 20px;
+  }
+
+  .reviews-traits-container {
+     flex-direction: column;
+  }
+
+  .reviews, .traits {
+     width: 100%;
+     margin-bottom: 20px;
+  }
+
+  .footer {
+     flex-direction: column;
+  }
+
+  .footer-item {
+     padding: 12px;
+     font-size: 16px; /* Adjust text size */
+  }
+
+  .content-container {
+     width: 100%;
+     padding: 15px; /* Add padding for content spacing */
+  }
+
+  .content {
+     font-size: 14px; /* Adjust font size for content */
+  }
+
+  .images-row {
+     justify-content: center;
+     gap: 10px; /* Reduce gap for small screens */
+  }
+
+  .post-image {
+     max-width: calc(100% - 10px); /* Adjust for small screens */
+     height: auto;
+  }
+}
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+  body, html {
+     font-size: 16px; /* Adjust base font size for medium screens */
+  }
+
+  .header {
+     gap: 50px;
+  }
+
+  .profile-picture {
+     width: 100px; /* Adjust profile picture size */
+     height: 110px;
+     margin-left: 5px;
+  }
+
+  .profile-info h1 {
+     font-size: 10px; /* Adjust font size */
+  }
+
+  .profile-info p {
+     font-size: 15px; /* Adjust font size */
+  }
+
+  .stats {
+     flex-direction: row;
+     align-items: center;
+  }
+
+  .reviews-traits-container {
+     flex-direction: row;
+     gap: 20px;
+  }
+
+  .reviews {
+    width: 56%;
+    box-sizing: border-box; /* Ensure padding and borders are included in width */
+    padding: 12px; /* Add padding inside sections */
+    margin-bottom: 20px; /* Add space between sections */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure long words break correctly */
+    line-height: 1.6; /* Increase line height for readability */
+    font-size: 12px; /* Adjust font size if needed */
+ }
+ 
+ .traits {
+  width: 56%;
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+  padding: 15px; /* Add padding inside sections */
+  margin-bottom: 20px; /* Add space between sections */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure long words break correctly */
+  line-height: 1.6; /* Increase line height for readability */
+  font-size: 12px; /* Adjust font size if needed */
+ }
+  .footer {
+     flex-direction: row;
+  }
+
+  .footer-item {
+     font-size: 16px;
+  }
+
+  .content-container {
+     width: 110%;
+     padding: 20px; /* Adjust padding for medium screens */
+  }
+
+  .content {
+     font-size: 15px; /* Adjust content font size */
+  }
+
+  .images-row {
+     justify-content: space-between;
+     gap: 15px; /* Increase gap for medium screens */
+  }
+
+  .post-image {
+     max-width: calc(33.33% - 15px); /* Adjust for medium screens */
+  }
+}
+.recent-activity {
+  background-color: #93e9fa;
+  padding: 8px 10px; /* Reduced padding for less height */
+  border-radius: 30px; /* Fully rounded corners */
+  color: #fff;
+  margin-left: 40px;
+  margin-top: 20px; /* Add spacing from elements above */
+  margin-bottom: 20px; /* Add spacing from elements below */
+  width: 98%; /* Increase width to occupy more space */
+  max-width: 1600px; /* Optional: Limit the maximum width for responsiveness */
+  padding: 15px;
+}
+
+
+
+.recent-activity h3 {
+  margin: 0 10 10px 0; /* Reduced margin for less space below the heading */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Activity Items */
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0; /* Increased gap between activity items */
+  border-radius: 8px;
+  padding: 8px 12px; /* Reduced padding to decrease height of individual items */
+  color: #333; /* Text color */
+}
+
+/* Circular Images */
+.activity-image {
+  width: 36px; /* Reduced size of the circular image */
+  height: 36px; /* Reduced size of the circular image */
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden;
+  margin-right: 12px; /* Increased space between the image and text */
+}
+
+.activity-image img {
+  width: 100%; /* Fill the circular container */
+  height: 100%; /* Fill the circular container */
+  object-fit: cover; /* Ensure the image fits nicely */
+}
+
+/* Labels */
+.activity-item label {
+  flex: 1; /* Ensure label takes up available space */
+  font-size: 13px; /* Slightly smaller font size for labels */
+  margin-left: 10px;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  gap: 15px; /* Increased space between icons */
+}
+
+.icons span {
+  cursor: pointer; /* Pointer cursor for icons */
+  font-size: 16px;
+  color: #c66a31; /* Match icon color with the section */
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  body, html {
+     font-size: 18px; /* Adjust base font size for larger screens */
+  }
+
+  .header {
+     gap: 100px;
+  }
+
+  .profile-picture {
+     width: 120px; /* Adjust profile picture size */
+     height: 120px;
+     margin-left: 150px;
+  }
+
+  .profile-info h1 {
+     font-size: 24px; /* Adjust font size */
+  }
+
+  .profile-info p {
+     font-size: 16px; /* Adjust font size */
+  }
+
+  .stats {
+     flex-direction: row;
+     gap: 95px;
+  }
+
+  .reviews-traits-container {
+     gap: 30px;
+  }
+
+  .reviews, .traits {
+     width: 400px;
+  }
+
+  .footer {
+     flex-direction: row;
+  }
+
+  .footer-item {
+     font-size: 20px;
+  }
+
+  .content-container {
+     width: 110%;
+     max-width: 848px;
+     padding: 25px; /* Adjust padding */
+  }
+
+  .content {
+     font-size: 16px; /* Adjust content font size */
+  }
+
+  .images-row {
+     gap: 20px;
+  }
+
+  .post-image {
+     max-width: calc(33.33% - 20px); /* Adjust for larger screens */
+  }
+}

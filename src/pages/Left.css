@@ -1,25 +1,25 @@
-/* Left Navigation */
-.leftNavBar {
-    background-color: #f5f5f5;
-    width: 250px; /* Fixed width for the sidebar */
-    position: fixed; /* Fixed sidebar */
-    top: 0;
-    left: 0;
+/* Fixed Sidebar (Left) */
+.left-sidebar {
+    position: fixed; /* Fixes the sidebar in place */
+    top: 0; /* Aligns it to the top of the page */
+    left: 0; /* Aligns it to the left of the page */
+    width: 250px; /* Adjust the width as needed */
     height: 100vh; /* Full viewport height */
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease-in-out;
-    /* overflow-y: auto; Allow scrolling in the left sidebar if needed */
+    background-color: #fff; /* Sidebar background color */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for visual depth */
+    padding-top: 20px; /* Adds padding at the top */
+    z-index: 1000; /* Ensures it's above other content */
+    overflow-y: auto; /* Allows scrolling if content overflows */
   }
-/* Main content container */
-.profile-container {
-    margin-left: 17%; /* Adjust content margin to the right to avoid overlap with left navbar */
+  
+  /* To prevent content from being hidden behind the fixed sidebar */
+  .profile-container {
+    margin-left: 250px; /* Adjust the left margin to make space for the sidebar */
     padding: 20px;
-    overflow-y: auto; /* Allows the content to scroll */
-    height: 100vh; /* Full viewport height */
-}
+    flex: 1;
+    width: calc(100% - 250px); /* Ensure content does not overflow under the sidebar */
+  }
+  
 
 /* Profile section */
 .profileSection {

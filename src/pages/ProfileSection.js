@@ -39,7 +39,7 @@ const Profile = () => {
   };
   return (
     <div className="profile-page">
-      <Left />
+      <Left className= "left-sidebar"/>
     <div className="profile-container">
       <div className="header">
         <div className="profile-picture"></div>

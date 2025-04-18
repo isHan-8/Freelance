@@ -15,6 +15,20 @@ import { TfiMenu } from "react-icons/tfi";
 import { PiFiles } from "react-icons/pi";
 function RightSidebar() {
     return (
+      <>
+          {/* Mobile Only Carousel for Stories */}
+          <div className="storyCarouselMobile">
+          <div className="storyScroll">
+            {[1, 2, 3, 4, 5, 6].map((item, idx) => (
+              <div className="storyCircle" key={idx}>
+                <img
+                  src="https://images.unsplash.com/photo-1614350292382-c448d0110dfa?w=600&auto=format&fit=crop&q=60"
+                  alt={`Story ${idx + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="rightSidebar">
           <h1 className="centertext"> Stories</h1>
           <div className="storySection">
@@ -98,6 +112,7 @@ function RightSidebar() {
             </div>
           </div>
         </div>
+        </> 
   );
 }
 

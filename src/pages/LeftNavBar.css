@@ -169,9 +169,9 @@
 
   .menuItem,
   .menuItem1 {
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 0;
-    margin-bottom: 6px; /* Smaller gap between items */
+    margin-bottom: 15px; /* Smaller gap between items */
   }
 
   .using {
@@ -202,13 +202,13 @@
 
 @media (max-width: 480px) {
   .leftNavBar {
-    width: 100%;
+    width: 20%;
     padding: 10px;
     margin-top: 10px;
   }
 
   .profilePic {
-    width: 50px;
+    width: 20px;
     height: 50px;
   }
 
@@ -236,3 +236,71 @@
     display: block;
   }
 }
+@media (max-width: 773px) {
+  .leftNavBar {
+    width: 20%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .profilePic {
+    width: 20px;
+    height: 50px;
+  }
+
+  .overlayPic {
+    width: 50px;
+    height: 50px;
+    left: 35px;
+  }
+
+  .using {
+    font-size: 16px;
+  }
+
+  .username {
+    font-size: 10px;
+  }
+
+  .menuItem,
+  .menuItem1 {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .menuItem1 {
+    display: block;
+  }
+}
+@media (max-width: 966px) {
+  .menuText {
+    display: none !important;
+  }
+
+  .menuItem,
+  .menuItem1 {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0 !important;
+    padding: 10px !important;
+  }
+
+  .menuIcon {
+    margin-right: 0 !important;
+    font-size: 24px;
+  }
+
+  .profileSection,
+  .using,
+  .username {
+    display: none !important;
+  }
+
+  .leftNavBar {
+    width: 80px !important;
+    padding: 10px !important;
+    align-items: center;
+  }
+}
+
