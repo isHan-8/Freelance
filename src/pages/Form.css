@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eee;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-container {
+    max-width: 800px;
+    background: white;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: black;
+  }
+  .field label {
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .field label span {
+    color: red;
+    margin-left: 2px;
+  }
+  
+  
+  .section-title {
+    font-size: 14px;
+    color: #0a0909;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field.full {
+    width: 100%;
+  }
+  
+  .field label {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .field label span {
+    color: red;
+  }
+  
+  input, textarea {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #131111;
+    border-radius: 10px;
+    outline: none;
+    background: #f9f9f9;
+    transition: 0.2s;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #888;
+    background: white;
+  }
+  
+  .datetime {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .create-btn {
+    background-color: #e53935;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .create-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+  }
+  .row.small-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  .field.small {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .field.small input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  input[type="text"],
+input[type="date"],
+input[type="time"] {
+  padding: 6px 10px;
+  height: 36px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+textarea {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+.field.small-width {
+    width: 240px; /* or any desired width */
+  }
+  

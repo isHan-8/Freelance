@@ -45,6 +45,7 @@ import LoginSignup from './pages/LoginSignup'
 import OriginalLogin from './pages/OriginalLogin'
 import Indexing from './pages/Indexing';
 import BookingDetails from './pages/BookingDetails';
+import Form from './pages/Form';
 function App() {
   return (
     <AuthProvider>
@@ -68,6 +69,7 @@ function App() {
             <Route path="/loging" element={<LoginSignup />} />
             <Route path="/Log" element={<OriginalLogin />} />
             <Route path="/eventing" element={<Indexing/>} />
+            <Route path="/form" element={<Form/>} />
             <Route path="/booking-details" element={<BookingDetails/>} />
             <Route path="/profile/:username" element={<Profile />} />
             <Route path="/edit_profile" element={<EditProfile />} />

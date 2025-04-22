@@ -13,6 +13,7 @@ export const card = [
     cost: "749",
     OverallRating: "3.4",
     Userrating: "3.4",
+    ishan: "1hr 30min",
     backgroundImage: party,
   },
   {
@@ -23,6 +24,7 @@ export const card = [
     cost: "999",
     OverallRating: "4.2",
     Userrating: "4.0",
+    ishan: "1hr 30min",
     backgroundImage: party1,
   },
   {
@@ -33,6 +35,7 @@ export const card = [
     cost: "599",
     OverallRating: "3.9",
     Userrating: "3.7",
+    ishan: "1hr 30min",
     backgroundImage: party2,
   },
   {
@@ -43,6 +46,7 @@ export const card = [
     cost: "699",
     OverallRating: "4.1",
     Userrating: "4.0",
+    ishan: "1hr 30min",
     backgroundImage: party3,
   },
   {
@@ -53,6 +57,7 @@ export const card = [
     cost: "849",
     OverallRating: "4.3",
     Userrating: "4.2",
+    ishan: "1hr 30min",
     backgroundImage: party4,
   }
 ];
