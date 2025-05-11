@@ -1,8 +1,15 @@
-/* General Layout */
 .appLayout {
   display: flex;
   height: 100vh;
   width: 130%;
-  background-color: #f0f2f5;
+  background-color: var(--container-color);
+  overflow: hidden; /* 🔥 This hides ALL scrollbars */
+
+  /* (optional, if needed for extra safety) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
+.appLayout::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

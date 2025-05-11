@@ -37,8 +37,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 // Import AuthProvider
 import { AuthProvider } from './context/AuthContext';
-import Chat from './pages/Chat';
-import ProfileSection from './pages/ProfileSection';
+import Chat from './pages/Chat/Chat.js';
+// import ProfileSection from './pages/ProfileSection';
 import Filter from './pages/Filter';
 import Event from './pages/Event';
 import LoginSignup from './pages/LoginSignup'
@@ -46,9 +46,15 @@ import OriginalLogin from './pages/OriginalLogin'
 import Indexing from './pages/Indexing';
 import BookingDetails from './pages/BookingDetails';
 import Form from './pages/Form';
+import Ishane from './pages/Ishane.jsx';
+import DatingModule from './pages/DatingModule.jsx';
+import { ThemeProvider } from './ThemeContext.js'; // <-- Add this
+
 function App() {
   return (
     <AuthProvider>
+            <ThemeProvider> {/* Wrapping the app */}
+
       <Router>
         <Routes>
           {/* Public Routes with PublicLayout */}
@@ -60,17 +66,25 @@ function App() {
 
           {/* Protected Routes with PrivateLayout */}
           <Route >
+
+            {/* Ishan Routes */}
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/feed" element={<Feed />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/profiling" element={<ProfileSection />} />
+            <Route path="/chat" element={<Chat />} /> 
+            {/* <Route path="/ruf" element={<ProfileSection />} /> */}
+            <Route path="/Profile" element={<Ishane />} />
             <Route path="/filter" element={<Filter />} />
-            <Route path="/event" element={<Event />} />
-            <Route path="/loging" element={<LoginSignup />} />
-            <Route path="/Log" element={<OriginalLogin />} />
+            {/* <Route path="/event" element={<Event />} /> */}
+            {/* <Route path="/loging" element={<LoginSignup />} /> */}
+            <Route path="/loging" element={<OriginalLogin />} />
             <Route path="/eventing" element={<Indexing/>} />
             <Route path="/form" element={<Form/>} />
             <Route path="/booking-details" element={<BookingDetails/>} />
+            <Route path="/dat" element={<DatingModule/>} />
+
+
+
+
             <Route path="/profile/:username" element={<Profile />} />
             <Route path="/edit_profile" element={<EditProfile />} />
             <Route path="/create_post" element={<CreatePost />} />
@@ -106,6 +120,8 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      </ThemeProvider>
+
     </AuthProvider>
   );
 }

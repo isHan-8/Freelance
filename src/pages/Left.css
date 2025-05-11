@@ -1,248 +1,181 @@
-/* Fixed Sidebar (Left) */
-.left-sidebar {
-    position: fixed; /* Fixes the sidebar in place */
-    top: 0; /* Aligns it to the top of the page */
-    left: 0; /* Aligns it to the left of the page */
-    width: 250px; /* Adjust the width as needed */
-    height: 100vh; /* Full viewport height */
-    background-color: #fff; /* Sidebar background color */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for visual depth */
-    padding-top: 20px; /* Adds padding at the top */
-    z-index: 1000; /* Ensures it's above other content */
-    overflow-y: auto; /* Allows scrolling if content overflows */
-  }
-  
-  /* To prevent content from being hidden behind the fixed sidebar */
-  .profile-container {
-    margin-left: 250px; /* Adjust the left margin to make space for the sidebar */
-    padding: 20px;
-    flex: 1;
-    width: calc(100% - 250px); /* Ensure content does not overflow under the sidebar */
-  }
-  
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
 
-/* Profile section */
-.profileSection {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 1000;
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar.dark {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.sidebar.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 300px;
+}
+
+.theme-toggle:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-toggle:hover .icon,
+.theme-toggle:hover span {
+  color: #fff;
+}
+
+.theme-toggle .icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 170px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li .icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.menu li:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.menu li:hover .icon,
+.menu li:hover span {
+  color: #fff;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.logout, .profile {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout:hover, .profile:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.logout:hover .icon,
+.logout:hover span,
+.profile:hover .icon,
+.profile:hover span {
+  color: #fff;
+}
+
+.logout {
+  color: #e74c3c;
+}
+
+.logout .icon {
+  margin-right: 8px;
+}
+
+.profile .icon {
+  margin-right: 2px;
+}
+
+/* Media query for small screens */
+@media (max-width: 1290px) {
+  .sidebar {
+    width: 60px;
+    padding: 10px;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .menu li {
+    justify-content: center;
+  }
+
+  .menu li .icon {
+    margin-right: 0;
+    font-size: 1.5rem;
+  }
+
+  .menu li span {
+    display: none;
+  }
+
+  .bottom {
     align-items: center;
-    margin-left: -50px; /* Adjust this value as needed to shift it right */
-}
+  }
 
-.profilePicContainer {
-    position: relative;
-    margin-left: -50px;
-}
+  .logout, .profile {
+    font-size: 1.1rem;
+  }
 
-.profilePic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
+  .logout .icon, .profile .icon {
+    font-size: 1.5rem;
+  }
 
-.overlayPic {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    left: 50px;
-    border: 2px solid white;
-}
-
-.using {
-    font-size: 22px;
-    font-family: Poppins;
-    font-weight: bold;
-    color: black;
-}
-
-.username {
-    font-size: 12px;
-    color: black;
-    margin-top: -10px;
-}
-
-.navMenu {
-    margin-top: 20px;
-    width: 90%;
-}
-
-.bottomMenu {
-    margin-top: auto; /* Positions at the bottom */
-    width: 90%;
-}
-
-.menuItem {
-    padding: 10px;
-    font-size: 19px;
-    cursor: pointer;
-    color: black;
-    width: 100%;
-    text-align: left;
-    display: block;
-    margin-left: 30px;
-    gap: 10px;
-    margin-bottom: 12px; /* Adds vertical spacing between elements */
-}
-
-.menuItem1 {
-    padding: 10px;
-    font-size: 19px;
-    cursor: pointer;
-    color: black;
-    width: 100%;
-    text-align: left;
-    display: block;
-    margin-left: 30px;
-}
-
-.hoverEffect:hover {
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.active {
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.menuIcon {
-    margin-right: 10px;
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-.centertext {
-    font-size: 36px;
-    color: black;
-}
-
-/* Responsive styles */
-@media (max-width: 1024px) {
-    .leftNavBar {
-        width: 20%; /* Slightly reduced width for tablets */
-        padding: 15px;
-    }
-
-    .profilePic {
-        width: 60px;
-        height: 60px;
-    }
-
-    .overlayPic {
-        width: 60px;
-        height: 60px;
-        left: 40px;
-    }
-
-    .menuItem,
-    .menuItem1 {
-        font-size: 16px;
-        margin-left: 10px;
-    }
-
-    .using {
-        font-size: 20px;
-    }
-
-    .username {
-        font-size: 11px;
-    }
-
-    .navMenu {
-        width: 70%;
-    }
-}
-
-@media (max-width: 768px) {
-    .leftNavBar {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        flex-direction: column;
-    }
-
-    .profileSection {
-        margin-left: 0;
-    }
-
-    .menuItem,
-    .menuItem1 {
-        font-size: 14px;
-        margin-left: 0;
-        margin-bottom: 6px; /* Smaller gap between items */
-    }
-
-    .using {
-        font-size: 18px;
-    }
-
-    .username {
-        font-size: 10px;
-    }
-
-    .menuIcon {
-        font-size: 18px;
-    }
-
-    .navMenu {
-        width: 100%;
-    }
-
-    .bottomMenu {
-        margin-top: 10px;
-    }
-
-    /* Add a hamburger icon for mobile */
-    .menuItem1 {
-        display: none; /* Optionally hide some items */
-    }
-}
-
-@media (max-width: 480px) {
-    .leftNavBar {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-    .profilePic {
-        width: 50px;
-        height: 50px;
-    }
-
-    .overlayPic {
-        width: 50px;
-        height: 50px;
-        left: 35px;
-    }
-
-    .using {
-        font-size: 16px;
-    }
-
-    .username {
-        font-size: 10px;
-    }
-
-    .menuItem,
-    .menuItem1 {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .menuItem1 {
-        display: block;
-    }
+  .logout span, .profile span {
+    display: none;
+  }
 }

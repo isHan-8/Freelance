@@ -1,0 +1,1027 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light background */
+  font-family: Arial, sans-serif;
+  height: 100%; /* Ensure the body takes full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.profile-page {
+  display: flex;
+  height: 100vh; /* Full height layout */
+  gap: -6px; /* adds space between Left and profile-container */
+}
+.header {
+  display: flex;
+  align-items: center; /* Vertically align image and text */
+  gap: 100px; /* Space between the image and text */
+  padding-bottom: 20px; /* Retain padding for spacing */
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove any shadow (if previously applied) */
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  /* margin-left: 60px; */
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Vertically align image and text */
+  gap: 100px; /* Reduced space between the image and text */
+  padding-bottom: 20px;
+}
+
+.profile-picture {
+  width: 120px; /* Set the size for the circular image */
+  height: 120px;
+  background-color: #ddd; /* Placeholder color */
+  border-radius: 50%; /* Makes the shape circular */
+  margin-bottom: 30px;
+  margin-left: 150px; /* Reduced left margin for less spacing */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align content vertically */
+}
+
+.profile-info h1 {
+  font-size: 21px; /* Larger font size for the name */
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.profile-info p {
+  font-size: 16px; /* Slightly smaller font for the handle */
+  color: gray;
+  margin: 5px 0 15px;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  gap: 95px; /* Space between each stat */
+  margin-top: 3px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column; /* Stack the number and label vertically */
+  align-items: center; /* Center-align the content */
+}
+
+.stat-number {
+  font-size: 35px; /* Larger font size for numbers */
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 14px; /* Smaller font size for labels */
+  color: gray;
+  margin-top: -2px; /* Add space between the number and label */
+}
+
+/* Reviews and Traits Section */
+/* Reviews and Traits Section */
+/* Adjusted Container for Reviews and Traits */
+/* Adjusted Container for Reviews and Traits */
+.reviews-traits-container {
+  display: flex;
+  gap: 30px; /* Space between reviews and traits */
+  border-radius: 50px; /* Fully rounded for the main container */
+  max-width: 2500px; /* Maximum width for the entire container */
+  padding: 12px; /* Added spacing inside the container */
+  margin: 10 auto; /* Center the container */
+  margin-left: 37px;
+}
+
+/* Reviews Section */
+.reviews {
+  flex: none; /* Disable flex-based width allocation */
+  width: 400px; /* Explicitly set width for the Reviews container */
+  background-color: #f0f4ff; /* Light blue background */
+  padding: 25px;
+  border-radius: 30px; /* Fully rounded border from all sides */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-height: 600px; /* Adjusted height */
+}
+
+.reviews h3 {
+  margin-top: 0;
+  font-size: 16px; /* Reduced font size */
+  font-weight: bold;
+
+  padding-bottom: 10px;
+  color: #333; /* Darker text */
+}
+
+.review-item {
+  margin: 10px 20px; /* Reduced space between review items */
+  background-color: #fff; /* White background for individual reviews */
+  padding: 1px; /* Reduced padding */
+  border-radius: 15px; /* Fully rounded border from all sides */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.review-header {
+  display: flex;
+  align-items: center; /* Align image and text vertically */
+  gap: 8px; /* Reduced gap between image and text */
+}
+
+.reviewer-image {
+  width: 35px; /* Reduced size of the image */
+  height: 35px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+  background-color: #ddd; /* Placeholder background for missing images */
+  margin-bottom: -6px;
+}
+
+.reviewer-name {
+  font-size: 14px; /* Reduced font size */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #333; /* Darker text color */
+}
+
+.review-message {
+  font-size: 12px; /* Smaller font size for the message */
+  color: #555; /* Subtle gray color for the message */
+  line-height: 0.4; /* Improve readability */
+  margin-left: 50px;
+  margin-bottom: 5px;
+}
+
+/* Traits Section */
+/* Traits Section */
+.traits {
+  flex: none; /* Disable flex-based width allocation */
+  width: 400px; /* Explicitly set width for the Reviews container */
+  background-color: #f0f4ff; /* Light blue background */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-height: 600px; /* Adjusted height */
+  /* overflow-y: auto; Enable vertical scroll if content overflows */
+  border-radius: 30px; /* Fully rounded border from all sides */
+}
+.traits h3 {
+  margin-top: 0;
+  font-size: 16px; /* Reduced font size */
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.trait-container {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  margin-top: 10px;
+}
+
+.trait-item {
+  display: flex;
+  flex-direction: column; /* Stack number and label vertically */
+  align-items: center; /* Center the content horizontally */
+  text-align: center;
+  gap: 2px; /* Space between number and label */
+}
+
+.trait-number {
+  width: 50px; /* Smaller circle size */
+  height: 50px;
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%; /* Makes it circular */
+  display: flex;
+  justify-content: center; /* Center the number horizontally */
+  align-items: center; /* Center the number vertically */
+  font-size: 18px; /* Slightly smaller text for the number */
+  font-weight: bold; /* Bold number */
+  color: #333; /* Darker text color */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.trait-label {
+  font-size: 12px; /* Reduced font size for the label */
+  color: #555; /* Subtle gray color */
+}
+
+/* Recent Activity Section */
+/* Recent Activity Section */
+.recent-activity {
+  background-color: #93e9fa;
+  padding: 8px 10px; /* Reduced padding for less height */
+  border-radius: 30px; /* Fully rounded corners */
+  color: #fff;
+  margin-left: 40px;
+  margin-top: 20px; /* Add spacing from elements above */
+  margin-bottom: 20px; /* Add spacing from elements below */
+  width: 95%; /* Increase width to occupy more space */
+  max-width: 1600px; /* Optional: Limit the maximum width for responsiveness */
+  padding: 15px;
+}
+
+.recent-activity h3 {
+  margin: 0 10 10px 0; /* Reduced margin for less space below the heading */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Activity Items */
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0; /* Increased gap between activity items */
+  border-radius: 8px;
+  padding: 8px 12px; /* Reduced padding to decrease height of individual items */
+  color: #333; /* Text color */
+}
+
+/* Circular Images */
+.activity-image {
+  width: 36px; /* Reduced size of the circular image */
+  height: 36px; /* Reduced size of the circular image */
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden;
+  margin-right: 12px; /* Increased space between the image and text */
+}
+
+.activity-image img {
+  width: 100%; /* Fill the circular container */
+  height: 100%; /* Fill the circular container */
+  object-fit: cover; /* Ensure the image fits nicely */
+}
+
+/* Labels */
+.activity-item label {
+  flex: 1; /* Ensure label takes up available space */
+  font-size: 13px; /* Slightly smaller font size for labels */
+  margin-left: 10px;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  gap: 15px; /* Increased space between icons */
+}
+
+.icons span {
+  cursor: pointer; /* Pointer cursor for icons */
+  font-size: 16px;
+  color: #c66a31; /* Match icon color with the section */
+}
+
+/* Overall Footer Tabs Container */
+/* Unified Footer Tabs and Content Container */
+/* Unified Footer Tabs and Content Container */
+.footer-tabs-container {
+  /* background-color: #a5e6a5; Light, calming green background */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 20px auto; /* Center align and add bottom margin for spacing */
+  padding: 10;
+  display: block;
+  /* margin-right: 80px; */
+}
+
+/* Footer Tabs */
+.footer {
+  width: 108%; /* Set explicit width to forcefully reduce it */
+  max-width: 848px; /* Optional: Set a maximum width to limit its size */
+  display: flex;
+  background-color: rgb(
+    195,
+    245,
+    195
+  ); /* Transparent to keep the background consistent */
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+  margin: 10;
+  /* margin-right: 10px; */
+  margin-left: 34px;
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 14px 18px; /* Increased padding for better spacing */
+  font-weight: bold;
+  font-size: 20px; /* Slightly larger font size */
+  color: #333; /* Text color is black */
+  background-color: transparent; /* No background color for the text area */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-item:hover {
+  /* Shrink the size of the footer item */
+  transform: scale(0.95); /* Decreases size by 5% */
+  color: #ca5454; /* Text remains black */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.footer-item.active {
+  background-color: #fdeded;
+  color: #373131; /* Keep text dark */
+  transform: scale(0.8); /* Ensure the active item is at normal size */
+}
+
+/* Content Section */
+.content-container {
+  width: 20%; /* Set explicit width to forcefully reduce it */
+  max-width: 1000px; /* Optional: Set a maximum width to limit its size */
+  background-color: rgb(195, 245, 195); /* No background color for content */
+  border-radius: 0 0 12px 12px;
+  padding: 25px; /* Increased padding for better content spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  margin-left: 34px;
+  /* margin-top: 10px; */
+}
+/* styles.css */
+.responsive-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  background: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 35px;
+  height: 36px;
+  width: 88px;
+  padding: 0 12px;
+  margin-right: 92px;
+}
+
+/* Individual Content Styling */
+.content {
+  font-size: 16px;
+  color: #1b1919; /* Text color is black */
+  line-height: 1.8; /* Increased line height for readability */
+  margin-bottom: 20px; /* Add spacing between content blocks */
+}
+
+/* Image Grid in Posts */
+.images-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap in smaller screens */
+  justify-content: space-between;
+  gap: 15px; /* Increased gap for better spacing */
+  margin-bottom: 20px; /* Space below the images row */
+}
+
+.post-image {
+  width: 100%;
+  max-width: calc(33.33% - 15px); /* Adjust width for spacing */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 1351px) {
+  .profile-page {
+    display: flex;
+    height: 100vh;
+    gap: -6px; /* Note: negative gap doesn't work as expected */
+    margin-left: 150px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  body,
+  html {
+    font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: -10px;
+  }
+  .responsive-button {
+    width: 25%; /* Full width on small screens */
+    font-size: 16px;
+    height: 40px;
+    margin-right: 0;
+  }
+  .profile-picture {
+    width: 100px; /* Adjust profile picture size */
+    height: 100px;
+    margin-right: 100px !important; /* Remove horizontal gap */
+    margin-top: -40px !important; /* Reset top margin */
+    margin-bottom: -30px !important; /* Prevent bottom spacing */
+    padding: 0;
+  }
+
+  .profile-info h1 {
+    font-size: 18px !important;
+    align-items: center;
+    margin-left: 140px;
+    margin-bottom: 0 !important; /* Remove bottom margin */
+  }
+
+  .profile-info p {
+    font-size: 14px;
+    margin-left: 150px !important;
+    margin-top: 0 !important; /* Ensure no top margin */
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    margin-bottom: 20px;
+  }
+
+  .reviews-traits-container {
+    flex-direction: column;
+  }
+
+  .reviews,
+  .traits {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-item {
+    padding: 12px;
+    font-size: 16px; /* Adjust text size */
+  }
+
+  .content-container {
+    width: 100%;
+    padding: 15px; /* Add padding for content spacing */
+  }
+
+  .content {
+    font-size: 14px; /* Adjust font size for content */
+  }
+
+  .images-row {
+    justify-content: center;
+    gap: 10px; /* Reduce gap for small screens */
+  }
+
+  .post-image {
+    max-width: calc(100% - 10px); /* Adjust for small screens */
+    height: auto;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 1024px) {
+  body,
+  html {
+    font-size: 16px; /* Adjust base font size for medium screens */
+  }
+
+  .header {
+    gap: 50px;
+  }
+
+  .profile-picture {
+    width: 100px; /* Adjust profile picture size */
+    height: 100px;
+    margin-left: px;
+  }
+
+  .profile-info h1 {
+    font-size: 10px; /* Adjust font size */
+  }
+
+  .profile-info p {
+    font-size: 15px; /* Adjust font size */
+  }
+
+  .stats {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .reviews-traits-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .reviews {
+    width: 56%;
+    box-sizing: border-box; /* Ensure padding and borders are included in width */
+    padding: 12px; /* Add padding inside sections */
+    margin-bottom: 20px; /* Add space between sections */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure long words break correctly */
+    line-height: 1.6; /* Increase line height for readability */
+    font-size: 12px; /* Adjust font size if needed */
+  }
+
+  .traits {
+    width: 56%;
+    box-sizing: border-box; /* Ensure padding and borders are included in width */
+    padding: 15px; /* Add padding inside sections */
+    margin-bottom: 20px; /* Add space between sections */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure long words break correctly */
+    line-height: 1.6; /* Increase line height for readability */
+    font-size: 12px; /* Adjust font size if needed */
+  }
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer-item {
+    font-size: 16px;
+  }
+
+  .content-container {
+    width: 110%;
+    padding: 20px; /* Adjust padding for medium screens */
+  }
+
+  .content {
+    font-size: 15px; /* Adjust content font size */
+  }
+
+  .images-row {
+    justify-content: space-between;
+    gap: 15px; /* Increase gap for medium screens */
+  }
+
+  .post-image {
+    max-width: calc(33.33% - 15px); /* Adjust for medium screens */
+  }
+}
+.recent-activity {
+  background-color: #93e9fa;
+  padding: 8px 10px; /* Reduced padding for less height */
+  border-radius: 30px; /* Fully rounded corners */
+  color: #fff;
+  margin-left: 40px;
+  margin-top: 20px; /* Add spacing from elements above */
+  margin-bottom: 20px; /* Add spacing from elements below */
+  width: 98%; /* Increase width to occupy more space */
+  max-width: 1600px; /* Optional: Limit the maximum width for responsiveness */
+  padding: 15px;
+}
+
+.recent-activity h3 {
+  margin: 0 10 10px 0; /* Reduced margin for less space below the heading */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Activity Items */
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0; /* Increased gap between activity items */
+  border-radius: 8px;
+  padding: 8px 12px; /* Reduced padding to decrease height of individual items */
+  color: #333; /* Text color */
+}
+
+/* Circular Images */
+.activity-image {
+  width: 36px; /* Reduced size of the circular image */
+  height: 36px; /* Reduced size of the circular image */
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden;
+  margin-right: 12px; /* Increased space between the image and text */
+}
+
+.activity-image img {
+  width: 100%; /* Fill the circular container */
+  height: 100%; /* Fill the circular container */
+  object-fit: cover; /* Ensure the image fits nicely */
+}
+
+/* Labels */
+.activity-item label {
+  flex: 1; /* Ensure label takes up available space */
+  font-size: 13px; /* Slightly smaller font size for labels */
+  margin-left: 10px;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  gap: 15px; /* Increased space between icons */
+}
+
+.icons span {
+  cursor: pointer; /* Pointer cursor for icons */
+  font-size: 16px;
+  color: #c66a31; /* Match icon color with the section */
+}
+.content-container {
+  width: 98.7%; /* Set explicit width to forcefully reduce it */
+  max-width: 1000px; /* Optional: Set a maximum width to limit its size */
+  background-color: rgb(195, 245, 195); /* No background color for content */
+  border-radius: 0 0 12px 12px;
+  padding: 25px; /* Increased padding for better content spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  margin-left: 34px;
+  /* margin-top: 10px; */
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  body,
+  html {
+    font-size: 18px; /* Adjust base font size for larger screens */
+  }
+
+  .header {
+    gap: 100px;
+  }
+
+  .profile-picture {
+    width: 120px; /* Adjust profile picture size */
+    height: 120px;
+    margin-left: 150px;
+  }
+
+  .profile-info h1 {
+    font-size: 24px; /* Adjust font size */
+  }
+
+  .profile-info p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .stats {
+    flex-direction: row;
+    gap: 95px;
+  }
+
+  .reviews-traits-container {
+    gap: 30px;
+  }
+
+  .reviews,
+  .traits {
+    width: 400px;
+  }
+
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer-item {
+    font-size: 20px;
+  }
+
+  .content-container {
+    width: 110%;
+    max-width: 848px;
+    padding: 25px; /* Adjust padding */
+  }
+
+  .content {
+    font-size: 16px; /* Adjust content font size */
+  }
+
+  .images-row {
+    gap: 20px;
+  }
+
+  .post-image {
+    max-width: calc(33.33% - 20px); /* Adjust for larger screens */
+  }
+}
+@media (max-width: 911px) {
+  body,
+  html {
+    font-size: 16px;
+  }
+
+  .header {
+    gap: 50px;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+  }
+
+  .profile-info h1 {
+    font-size: 20px;
+  }
+
+  .profile-info p {
+    font-size: 15px;
+  }
+
+  .stats {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .reviews-traits-container {
+    flex-direction: row;
+    gap: 25px;
+    margin-right: -20px;
+  }
+
+  .reviews {
+    width: 49%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+
+  .traits {
+    width: 49%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer-item {
+    font-size: 16px;
+  }
+
+  .content-container {
+    width: 96.8%;
+    margin: 0 auto;
+    margin-right: -19px;
+  }
+
+  .content {
+    font-size: 15px;
+  }
+
+  .images-row {
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .post-image {
+    max-width: calc(33.33% - 15px);
+  }
+  .recent-activity {
+    background-color: #93e9fa;
+    padding: 8px 10px; /* Reduced padding for less height */
+    border-radius: 30px; /* Fully rounded corners */
+    color: #fff;
+    margin-left: 45px;
+    margin-top: 20px; /* Add spacing from elements above */
+    margin-bottom: 20px; /* Add spacing from elements below */
+    width: 96.8%; /* Increase width to occupy more space */
+    max-width: 1600px; /* Optional: Limit the maximum width for responsiveness */
+    padding: 15px;
+  }
+  /* Footer Tabs */
+  .content-container,
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    max-width: 100%;
+    margin-right: -10px;
+  }
+}
+
+@media (max-width: 608px) {
+  .profile-page {
+    display: flex;
+    flex-direction: column;
+    width: 95%; /* Use percentage for responsiveness */
+    max-width: 620px; /* Optional: set a max width */
+    height: auto; /* Let content decide height */
+    margin: 0 auto; /* Center horizontally */
+    padding: 10px;
+    margin-top: -10px !important;
+  }
+  .header {
+    gap: 12px;
+  }
+  .profile-info h1 {
+    font-size: 10px;
+    margin-top: 18px;
+    margin-left: 149px;
+  }
+
+  .profile-info p {
+    font-size: 15px;
+    margin-left: 160px !important;
+  }
+
+  .reviews-traits-container,
+  .footer,
+  .content-container {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 30px;
+  }
+  .recent-activity {
+    margin-left: 30px;
+    width: 100%; /* narrower width */
+    padding: 6px;
+  }
+
+  .reviews,
+  .traits {
+    width: 100%;
+    margin-right: -10px !important;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* Stats Section */
+  .stats {
+    display: flex;
+    gap: 95px; /* Space between each stat */
+    margin-top: 3px;
+    margin-left: 19px;
+    align-items: center;
+  }
+}
+.icon.red {
+  color: red !important;
+}
+@media (max-width: 500px) {
+  .profile-info h1 {
+    font-size: 10px;
+    margin-top: 18px;
+    margin-right: 25px;
+
+    margin-left: 80px;
+  }
+
+  .profile-info p {
+    font-size: 15px;
+    margin-left: 90px !important;
+  }
+  .reviews-traits-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .reviews,
+  .traits {
+    width: 85%;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .recent-activity,
+  .footer,
+  .content-container {
+    margin-left: 59px;
+    width: 85%;
+    padding: 6px;
+  }
+
+  .stats {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .stat-item {
+    margin: 4px 0;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 440px) {
+  .profile-page {
+    display: flex;
+    height: 100vh; /* Full height layout */
+    gap: -6px; /* adds space between Left and profile-container */
+    margin-left: -30px;
+  }
+  .reviews-traits-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .reviews,
+  .traits {
+    width: 90%;
+    padding: 6px;
+    margin: 0 auto 8px auto; /* center aligned with bottom spacing */
+  }
+
+  .recent-activity,
+  .footer,
+  .content-container {
+    width: 85%;
+    padding: 5px;
+    margin: 0 auto; /* center aligned */
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px !important;
+    font-size: 13px;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .stat-item {
+    margin: 3px 0;
+    padding: 3px;
+  }
+}
+
+@media (max-width: 375px) {
+  .reviews,
+  .traits {
+    width: 80%;
+    padding: 4px;
+    margin: 0 auto 6px auto;
+  }
+
+  .recent-activity,
+  .footer,
+  .content-container {
+    width: 80%;
+    padding: 3px;
+    margin: 0 auto;
+  }
+
+  .stats {
+    gap: 3px;
+    font-size: 12px;
+  }
+
+  .stat-item {
+    margin: 2px 0;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 320px) {
+  .reviews,
+  .traits {
+    width: 75%;
+    padding: 3px;
+    margin: 0 auto 5px auto;
+  }
+
+  .recent-activity,
+  .footer,
+  .content-container {
+    width: 75%;
+    padding: 2px;
+    margin: 0 auto;
+  }
+
+  .stats {
+    gap: 2px;
+    font-size: 11px;
+  }
+
+  .stat-item {
+    margin: 1px 0;
+    padding: 1px;
+  }
+}

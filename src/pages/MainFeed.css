@@ -5,6 +5,7 @@
   overflow-x: hidden;
   height: 100vh; /* or a custom height depending on your layout */
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .centerFeed::-webkit-scrollbar {
@@ -16,13 +17,13 @@
   z-index: 999; /* High value to layer on top */
 
   flex: 0.5;
-  bottom: -5px;
+  bottom: -16px;
   left: 48%;
   transform: translateX(-50%);
   background-color: #cfc9c9;
   padding: 15px;
   padding-left: 60px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(126, 105, 105, 0.1);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
@@ -62,25 +63,26 @@
 .inputContainer {
   position: relative;
   width: 120%;
-  margin-left: -43px;
+  margin-left: -47px;
 }
 
-.inputIcon{
+.inputIcon {
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
   height: 30px;
   width: 30px;
-  left : 10px;
+  left: 10px;
   pointer-events: none;
 }
- .inputIconRight {
+.inputIconRight {
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
   height: 30px;
   width: 30px;
   pointer-events: none;
+  color: #7b7272;
 }
 
 .inputIconRight {
@@ -109,6 +111,7 @@
 .icon {
   font-size: 20px;
   cursor: pointer;
+  color: #7b7272;
 }
 
 .iconText {
@@ -122,7 +125,7 @@
 
 .postButton {
   padding: 8px 15px;
-  background-color: #007bff;
+  background-color: #45617f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -155,6 +158,10 @@
 
 .cardBlue {
   background-color: #eef7ff;
+}
+.ishan::placeholder {
+  padding-left: 45px;
+  border-radius: 10px;
 }
 
 .feedHeader {
@@ -267,22 +274,13 @@
 /*  */
 @media (max-width: 1424px) {
   .postBoxFixed {
-    width: 50%; /* Adjust width for tablets */
-    left: 48%;
+    width: 51%; /* Adjust width for tablets */
+    left: 48.5%;
     transform: translateX(-50%);
   }
-
- 
-  
 }
 /* Responsive Styles */
 @media (max-width: 1265px) {
-  .postBoxFixed {
-    width: 50%; /* Adjust width for tablets */
-    left: 48%;
-    transform: translateX(-50%);
-  }
-
   .feedCard {
     padding: 20px;
   }
@@ -315,16 +313,9 @@
   .moreIconContainer {
     display: none;
   }
-  
 }
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .postBoxFixed {
-    width: 47%; /* Adjust width for tablets */
-    left: 51%;
-    transform: translateX(-50%);
-  }
-
   .feedCard {
     padding: 20px;
   }
@@ -356,21 +347,6 @@
   }
 }
 @media (max-width: 910px) {
-  .postBoxFixed {
-    width: 47%; /* Adjust width for tablets */
-    left: 51%;
-    transform: translateX(-50%);
-  }
-  .postBoxFixed input {
-    width: 95%;
-    padding: 10px;
-    padding-left: 50px;
-    right: 20px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
   .inputIconRight {
     position: absolute;
     top: 40%;
@@ -382,21 +358,6 @@
   }
 }
 @media (max-width: 768px) {
-  .postBoxFixed {
-    width: 56%; /* Adjust width for tablets */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .postBoxFixed input {
-    width: 97%;
-    padding: 10px;
-    padding-left: 50px;
-    right: 20px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
   .inputIconRight {
     position: absolute;
     top: 40%;
@@ -446,12 +407,6 @@
 }
 
 @media (max-width: 480px) {
-  .postBoxFixed {
-    width: 90%; /* Almost full width for mobile */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .postButton {
     width: 100%;
     padding: 12px;
@@ -490,21 +445,6 @@
   }
 }
 @media (max-width: 760px) {
-  .postBoxFixed {
-    width: 46%; /* Adjust width for tablets */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .postBoxFixed input {
-    width: 97%;
-    padding: 10px;
-    padding-left: 50px;
-    right: 20px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
   .inputIconRight {
     position: absolute;
     top: 40%;
@@ -564,22 +504,43 @@
     margin-left: auto; /* Align the three dots to the far right */
     margin-top: 0;
   }
- 
 }
+
 @media (max-width: 838px) {
+  .centerFeed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    height: 100vh;
+    z-index: 9999;
+    background: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 80px;
+
+    /* Hide scrollbar but allow scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+  }
+
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+  .centerFeed::-webkit-scrollbar {
+    display: none;
+  }
   .feedCard {
-    width: 145%; /* Wider feed */
+    width: 102%; /* Wider feed */
     margin-left: auto;
     margin-right: 10px; /* Push to the right */
-    padding: 35px;
+    padding: 20px;
   }
 
   .moreIconContainer {
     margin-left: auto; /* Align the three dots to the far right */
     margin-top: 0;
   }
- 
 }
+
 @media (max-width: 816px) {
   .feedCard {
     width: 130%; /* Wider feed */

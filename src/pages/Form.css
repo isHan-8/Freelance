@@ -1,142 +1,140 @@
+/* Default light theme styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #eee;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .form-container {
-    max-width: 800px;
-    background: white;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 35px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-container h1 {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: black;
-  }
-  .field label {
-    color: black;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .field label span {
-    color: red;
-    margin-left: 2px;
-  }
-  
-  
-  .section-title {
-    font-size: 14px;
-    color: #0a0909;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  .event-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .field.full {
-    width: 100%;
-  }
-  
-  .field label {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .field label span {
-    color: red;
-  }
-  
-  input, textarea {
-    padding: 10px 12px;
-    font-size: 15px;
-    border: 1px solid #131111;
-    border-radius: 10px;
-    outline: none;
-    background: #f9f9f9;
-    transition: 0.2s;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: #888;
-    background: white;
-  }
-  
-  .datetime {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-  }
-  
-  .create-btn {
-    background-color: #e53935;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .create-btn:hover {
-    background-color: #d32f2f;
-    transform: translateY(-1px);
-  }
-  .row.small-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-  }
-  
-  .field.small {
-    flex: 1;
-    min-width: 120px;
-  }
-  
-  .field.small input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  input[type="text"],
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eee;
+  margin: 0;
+  padding: 0;
+  color: black; /* Default text color for light theme */
+}
+
+/* Form container */
+.form-container {
+  max-width: 800px;
+  background: white;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 35px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.field label {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.field label span {
+  color: red;
+  margin-left: 2px;
+}
+
+.section-title {
+  font-size: 14px;
+  color: #0a0909;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field.full {
+  width: 100%;
+}
+
+.input,
+.textarea {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #131111;
+  border-radius: 10px;
+  outline: none;
+  background: #f9f9f9;
+  transition: 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #888;
+  background: white;
+}
+
+.datetime {
+  display: flex;
+  gap: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.create-btn {
+  background-color: #e53935;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-1px);
+}
+
+.row.small-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.field.small {
+  flex: 1;
+  min-width: 120px;
+}
+
+.field.small input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
 input[type="date"],
 input[type="time"] {
   padding: 6px 10px;
@@ -154,7 +152,146 @@ textarea {
   border: 1px solid #ccc;
   resize: vertical;
 }
+
 .field.small-width {
-    width: 240px; /* or any desired width */
-  }
-  
+  width: 240px; /* or any desired width */
+}
+/* The toggle button container */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Switch styling */
+.switch {
+  position: fixed; /* Use fixed to keep it pinned on scroll */
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 25px;
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* The round slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Dark theme */
+body.dark-mode {
+  background: #333 !important;
+  color: white;
+}
+
+/* Dark mode form container */
+body.dark-mode .form-container {
+  background: #444;
+  color: white;
+}
+
+body.dark-mode .form-container h1 {
+  color: white;
+}
+
+body.dark-mode .field label {
+  color: white;
+}
+
+body.dark-mode .section-title {
+  color: #ddd;
+}
+
+body.dark-mode .input,
+body.dark-mode .textarea {
+  background: #555;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark-mode .create-btn {
+  background-color: #f44336;
+}
+
+body.dark-mode .create-btn:hover {
+  background-color: #c62828;
+}
+
+/* The toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .theme-toggle {
+  background: #444;
+}
+/* Dark theme styling for the button */
+body.dark-mode .theme-toggle {
+  color: black;
+}
+
+body.dark-mode .switch input:checked + .slider {
+  background-color: #979393;
+}
+
+body.dark-mode .switch input:checked + .slider:before {
+  background-color: white;
+}

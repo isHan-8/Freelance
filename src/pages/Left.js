@@ -1,98 +1,72 @@
 import React, { useState } from "react";
-import "./ProfileSection.css";
-import Left from "./Left";
+import "./Left.css";
+import {
+  FaRegEdit,
+  FaRegStar,
+  FaFolderOpen,
+  FaRegClock,
+  FaBars,
+  FaSignOutAlt,
+  FaUser,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
 
-const Profile = () => {
-  const [activeTab, setActiveTab] = useState("POSTS");
+export default function Sidebar() {
+  const [darkMode, setDarkMode] = useState(false);
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case "POSTS":
-        return (
-          <div className="content">
-            <div className="images-row">
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt="Post 1"
-                className="post-image"
-              />
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt="Post 2"
-                className="post-image"
-              />
-              <img
-                src="https://via.placeholder.com/300x200"
-                alt="Post 3"
-                className="post-image"
-              />
-            </div>
-            <p>This is the POSTS content with three example images.</p>
-          </div>
-        );
-      case "COLLABORATE":
-        return <div className="content">This is the COLLABORATE content.</div>;
-      case "ABOUT ME":
-        return <div className="content">This is the ABOUT ME content.</div>;
-      default:
-        return null;
-    }
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-theme", !darkMode);
   };
 
   return (
-    <div className="profile-page">
-      <Left />
-      <div className="profile-container">
-        {/* Profile Header and Content */}
-        <div className="header">
-          <div className="profile-picture"></div>
-          <div className="profile-info">
-            <h1 className="heading">BRIAN DAVES</h1>
-            <p className="headingg">@davey_brian</p>
-            <div className="stats">
-              <div className="stat-item">
-                <span className="stat-number">90</span>
-                <span className="stat-label">POSTS</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">4.5k</span>
-                <span className="stat-label">FOLLOWERS</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">4.7</span>
-                <span className="stat-label">SCORE</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Tabs */}
-        <div className="footer">
-          <div
-            className={`footer-item ${activeTab === "POSTS" ? "active" : ""}`}
-            onClick={() => setActiveTab("POSTS")}
-          >
-            POSTS
-          </div>
-          <div
-            className={`footer-item ${activeTab === "COLLABORATE" ? "active" : ""}`}
-            onClick={() => setActiveTab("COLLABORATE")}
-          >
-            COLLABORATE
-          </div>
-          <div
-            className={`footer-item ${activeTab === "ABOUT ME" ? "active" : ""}`}
-            onClick={() => setActiveTab("ABOUT ME")}
-          >
-            ABOUT ME
-          </div>
-        </div>
-
-        {/* Render the content based on active tab */}
-        <div className="content-container">{renderContent()}</div>
+    <aside className={`sidebar ${darkMode ? "dark" : "light"}`}>
+      <div className="brand">brandname.co</div>
+      <nav className="menu">
+        <ul>
+          <li>
+            <FaRegEdit className="icon" />
+            <span>Create</span>
+          </li>
+          <li>
+            <FaRegStar className="icon" />
+            <span>Highlights</span>
+          </li>
+          <li>
+            <FaFolderOpen className="icon" />
+            <span>Archive</span>
+          </li>
+          <li>
+            <FaRegClock className="icon" />
+            <span>Activity</span>
+          </li>
+          <li>
+            <FaBars className="icon" />
+            <span>More</span>
+          </li>
+          {/* Add Theme Toggle as another <li> */}
+          <li onClick={toggleTheme}>
+            {darkMode ? (
+              <FaSun className="icon" />
+            ) : (
+              <FaMoon className="icon" />
+            )}
+            <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
+          </li>
+        </ul>
+        {/* </ul> */}
+      </nav>
+      <div className="bottom">
+        <button className="logout">
+          <FaSignOutAlt className="icon" />
+          <span>Logout</span>
+        </button>
+        <button className="profile">
+          <FaUser className="icon" />
+          <span>Profile</span>
+        </button>
       </div>
-    </div>
+    </aside>
   );
-};
-
-export default Profile;
+}

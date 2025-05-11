@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./chat.css";
-import LeftNavBar from "./LeftNavBar";
+import LeftNavBar from "../LeftNavBar";
 import EmojiPicker from "emoji-picker-react";
-import { FaSmile } from "react-icons/fa"; // Emoji button
+import { FaSmile } from "react-icons/fa";
 import { FaMicrophone } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
@@ -26,7 +26,7 @@ const dummyChats = [
       "https://plus.unsplash.com/premium_photo-1669839774885-b1958e625b5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8anBnfGVufDB8fDB8fHww",
     lastMessage: "You sent an attachment.",
     time: "1h",
-    messages: ["Sure, Ill send it"],
+    messages: ["Sure, I'll send it"],
     unread: false,
   },
   {
@@ -57,15 +57,30 @@ function ChatApp() {
   const [selectedChat, setSelectedChat] = useState(dummyChats[0]);
   const [showPicker, setShowPicker] = useState(false);
   const [selectedEmoji, setSelectedEmoji] = useState(null);
+
+  const [theme, setTheme] = useState("light");
+
+  // Apply theme to body
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const switchTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   const handleEmojiClick = (emojiData) => {
     setSelectedEmoji(emojiData.emoji);
     setShowPicker(false);
   };
+
   return (
     <div className="messenger-container">
-      <LeftNavBar />
+      {/* Pass theme and switchTheme to LeftNavBar */}
+      <LeftNavBar theme={theme} switchTheme={switchTheme} />
+
       {/* Left sidebar */}
-      <div className="sidebar">
+      <div className="sidebar1">
         <div className="sidebar-header">
           <h2>ish18an</h2>
           <MdEdit className="edit-icon" />
@@ -81,7 +96,7 @@ function ChatApp() {
             <div
               key={chat.id}
               className={`chat-item ${
-                selectedChat.id === chat.id ? "" : ""
+                selectedChat.id === chat.id ? "active-chat" : ""
               }`}
               onClick={() => setSelectedChat(chat)}
             >

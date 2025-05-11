@@ -120,7 +120,7 @@ function MainFeed() {
               {/* Post Box - Fixed at the bottom of the MainFeed */}
               <div className="postBoxFixed">
                 <div className="inputContainer">
-                  <input type="text" placeholder="Share something..." />
+                  <input type="text" placeholder="Share something..." className="ishan" />
                   <img src="./logo192.png" alt="icon" className="inputIcon" />
                   <FaLightbulb className="inputIconRight" />
                 </div>
