@@ -929,7 +929,7 @@ html {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 460px) {
   .profile-page {
     display: flex;
     height: 100vh; /* Full height layout */
@@ -950,13 +950,20 @@ html {
   }
 
   .recent-activity,
-  .footer,
-  .content-container {
-    width: 85%;
+  .footer{
+    width: 89%;
     padding: 5px;
     margin: 0 auto; /* center aligned */
+    margin-right: -37px;
+    margin-bottom: 15px;
   }
-
+ .content-container {
+   width: 89%;
+    padding: 5px;
+    margin: 0 auto; /* center aligned */
+    margin-right: -37px;
+     margin-top: -15px;
+ }
   .stats {
     display: flex;
     flex-wrap: wrap;
@@ -978,16 +985,24 @@ html {
     width: 80%;
     padding: 4px;
     margin: 0 auto 6px auto;
+    margin-left: -16px;
   }
 
   .recent-activity,
-  .footer,
+  .footer{
+    width: 80%;
+    padding: 3px;
+    margin: 0 auto;
+    margin-right: 10px;
+    margin-bottom: 14px;
+  }
   .content-container {
     width: 80%;
     padding: 3px;
     margin: 0 auto;
+    margin-right: 10px;
+    margin-top: -14px;
   }
-
   .stats {
     gap: 3px;
     font-size: 12px;

@@ -1,3 +1,14 @@
+body, html {
+  overflow: hidden; /* Prevents scrollbars globally */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 .centerFeed {
   flex: 0.47566;
   padding: 15px;
@@ -13,30 +24,30 @@
 }
 
 .postBoxFixed {
-  position: absolute;
-  z-index: 999; /* High value to layer on top */
-
-  flex: 0.5;
-  bottom: -16px;
-  left: 48%;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
   transform: translateX(-50%);
+  z-index: 999;
+
   background-color: #cfc9c9;
-  padding: 15px;
-  padding-left: 60px;
+  padding: 15px 0 15px 60px;
   box-shadow: 0 2px 8px rgba(126, 105, 105, 0.1);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
   flex-direction: column;
   width: 80%;
-  border-bottom: 1px solid #ccc;
-  height: 80px;
+  height: 70px;
   transition: height 0.3s ease-in-out;
+  overflow: hidden;
+  will-change: height;
 }
 
 .postBoxFixed:hover {
-  height: 120px;
+  height: 107px;
 }
+
 
 .postBoxFixed::before {
   content: "";
@@ -51,10 +62,10 @@
 }
 
 .postBoxFixed input {
-  width: 90%;
+  width: 87%;
   padding: 8px;
   padding-left: 40px;
-  border-radius: 20px;
+  border-radius: 25px !important;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -83,11 +94,10 @@
   width: 30px;
   pointer-events: none;
   color: #7b7272;
+   right: 110px;
 }
 
-.inputIconRight {
-  right: 80px;
-}
+
 
 .postBoxActions {
   display: flex;
@@ -136,6 +146,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 70px;
+  /* margin-bottom: 10px !important; */
 }
 
 .postButton:hover {
@@ -316,6 +327,27 @@
 }
 /* Responsive Styles */
 @media (max-width: 1024px) {
+  .postBoxFixed {
+    position: absolute;
+    z-index: 999; /* High value to layer on top */
+
+    flex: 0.5;
+    bottom: -16px;
+    left: 52%;
+    transform: translateX(-50%);
+    background-color: #cfc9c9;
+    padding: 15px;
+    padding-left: 60px;
+    box-shadow: 0 2px 8px rgba(126, 105, 105, 0.1);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-bottom: 1px solid #ccc;
+    height: 80px;
+    transition: height 0.3s ease-in-out;
+  }
   .feedCard {
     padding: 20px;
   }
@@ -493,6 +525,27 @@
   }
 }
 @media (max-width: 964px) {
+  .postBoxFixed {
+    position: absolute;
+    z-index: 999; /* High value to layer on top */
+
+    flex: 0.5;
+    bottom: -16px;
+    left: 39%;
+    transform: translateX(-50%);
+    background-color: #cfc9c9;
+    padding: 15px;
+    padding-left: 60px;
+    box-shadow: 0 2px 8px rgba(126, 105, 105, 0.1);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 58%;
+    border-bottom: 1px solid #ccc;
+    height: 80px;
+    transition: height 0.3s ease-in-out;
+  }
   .feedCard {
     width: 102%; /* Wider feed */
     margin-left: auto;
@@ -511,39 +564,52 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 85%;
+    width: 100%; /* Was 85% */
     height: 100vh;
     z-index: 9999;
     background: white;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 80px;
-
-    /* Hide scrollbar but allow scrolling */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    padding: 10px 20px; /* More consistent spacing */
   }
 
-  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
-  .centerFeed::-webkit-scrollbar {
-    display: none;
+.postBoxFixed {
+    position: fixed;
+    bottom: 0;
+    width: 95%; /* Almost full width */
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 50px;
+    height: 90px;
+    z-index: 100; /* Optional: to ensure it stays on top */
   }
+
+  .inputContainer {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .inputIconRight {
+    right: 20px;
+  }
+
+  .postButton {
+    width: 100%;
+    margin: 10px 0 0 0;
+    justify-content: center;
+  }
+
   .feedCard {
-    width: 102%; /* Wider feed */
-    margin-left: auto;
-    margin-right: 10px; /* Push to the right */
-    padding: 20px;
-  }
-
-  .moreIconContainer {
-    margin-left: auto; /* Align the three dots to the far right */
-    margin-top: 0;
+    width: 100%;
+    padding: 15px;
+    margin: 10px auto;
   }
 }
 
+
 @media (max-width: 816px) {
   .feedCard {
-    width: 130%; /* Wider feed */
+    width: 90%; /* Wider feed */
     margin-left: auto;
     margin-right: 10px; /* Push to the right */
     padding: 20px;
@@ -553,4 +619,33 @@
     margin-left: auto; /* Align the three dots to the far right */
     margin-top: 0;
   }
+.postBoxFixed {
+  position: fixed;
+  bottom: 0;
+  left: 80%;
+  transform: translateX(-50%);
+  width: 86%;
+  padding-left: 30px;
+  height: 70px;
+  margin-left: 0; /* margin-left not needed when using transform */
+  background-color: #cfc9c9;
+  box-shadow: 0 2px 8px rgba(126, 105, 105, 0.1);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+  will-change: height;
+}
+
+.postBoxFixed:hover {
+  height: 100px;
+}
+
+/* No media query needed if you're not changing dimensions */
+
+
+
 }

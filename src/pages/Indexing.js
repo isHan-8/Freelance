@@ -124,7 +124,7 @@ const Index = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
-                marginLeft: "380px",
+                marginLeft: "400px",
               }}
             >
               <h3>Events in Bangalore (15 Apr - 21 Apr)</h3>
@@ -139,9 +139,9 @@ const Index = () => {
               <div
                 style={{
                   position: "absolute",
-                  top: "80%",
+                  top: "40%",
                   zIndex: 1000,
-                  marginTop: "10px",
+                  marginTop: "15px",
                   boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
                   borderRadius: "10px",
                   backgroundColor: "white",
