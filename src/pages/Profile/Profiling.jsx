@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Ishane.css";
+import "./Profiling.css";
 import Left from "./Left";
 import { FaRegCommentDots, FaHeart, FaRegHeart } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";

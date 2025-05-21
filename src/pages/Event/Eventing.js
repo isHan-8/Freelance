@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Indexing.css";
-import { card } from "./constant";
+import "./Eventing.css";
+import { card } from "./constant.js";
 import { FaUser } from "react-icons/fa6";
 import events from "../../assets/events.jpg";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router";
-import BookingDetails from "./BookingDetails";
+import BookingDetails from "./BookingDetails.js";
 import {
   FaMapMarkerAlt,
   FaCalendarAlt,
@@ -17,7 +17,7 @@ import {
 import { MdOutlineStarRate } from "react-icons/md";
 import { FaMicrophoneAlt, FaHome } from "react-icons/fa";
 import { useContext } from "react";
-import { useTheme } from "../../ThemeContext.js";
+import { useTheme } from "../../ThemeContext.js.js";
 import { FiCalendar } from "react-icons/fi";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
