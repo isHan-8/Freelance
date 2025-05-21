@@ -147,20 +147,19 @@
 // Feed.js
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
-import LeftNavBar from "./LeftNavBar";
+import LeftNavBar from "../LeftNavBar";
 import RightSidebar from "./RightSidebar";
 import MainFeed from "./MainFeed";
 
 function App() {
   const [theme, setTheme] = useState("light");
 
-  // Apply theme to body
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const switchTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (

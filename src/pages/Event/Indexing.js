@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Indexing.css";
 import { card } from "./constant";
 import { FaUser } from "react-icons/fa6";
-import events from "../assets/events.jpg";
+import events from "../../assets/events.jpg";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import BookingDetails from "./BookingDetails";
@@ -17,11 +17,10 @@ import {
 import { MdOutlineStarRate } from "react-icons/md";
 import { FaMicrophoneAlt, FaHome } from "react-icons/fa";
 import { useContext } from "react";
-import { useTheme } from "../ThemeContext.js"; // <-- corrected import
+import { useTheme } from "../../ThemeContext.js";
 import { FiCalendar } from "react-icons/fi";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-// import { FiCalendar } from 'react-icons/fi';
 
 const Index = () => {
   const containerRef = useRef();
@@ -30,12 +29,11 @@ const Index = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [hideCardContent, setHideCardContent] = useState(false);
-  const { theme, toggleTheme } = useTheme(); // <-- using the hook
+  const { theme, toggleTheme } = useTheme();
   const [showCalendar, setShowCalendar] = useState(false);
   const [date, setDate] = useState(new Date());
   const calendarRef = useRef(null);
 
-  // Close calendar when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (calendarRef.current && !calendarRef.current.contains(e.target)) {
@@ -90,24 +88,6 @@ const Index = () => {
 
   return (
     <>
-      {/* <button
-        onClick={toggleTheme}
-        style={{
-          position: "fixed",
-          top: "20px",
-          right: "20px",
-          padding: "10px 20px",
-          backgroundColor: theme === "light" ? "#000" : "#fff",
-          color: theme === "light" ? "#fff" : "#000",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-          zIndex: 1000,
-        }}
-      >
-        Switch to {theme === "light" ? "Dark" : "Light"} Mode
-      </button> */}
-
       <div className="event-img">
         <img src={events} alt="event" />
         <input className="search" placeholder="Bangalore, IN" type="search" />
@@ -115,18 +95,8 @@ const Index = () => {
 
       <div className="part2">
         <div className="second-section">
-          <div
-            style={{ position: "relative", display: "inline-block" }}
-            ref={calendarRef}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                marginLeft: "400px",
-              }}
-            >
+          <div className="calendar-wrapper" ref={calendarRef}>
+            <div className="calendar-header">
               <h3>Events in Bangalore (15 Apr - 21 Apr)</h3>
               <FiCalendar
                 size={24}
@@ -136,23 +106,11 @@ const Index = () => {
             </div>
 
             {showCalendar && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "40%",
-                  zIndex: 1000,
-                  marginTop: "15px",
-                  boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
-                  borderRadius: "10px",
-                  backgroundColor: "white",
-                  marginLeft: "600px",
-                }}
-              >
+              <div className="calendar-popup">
                 <Calendar onChange={setDate} value={date} />
               </div>
             )}
           </div>
-          {/* </div> */}
 
           <div className="slider-container" ref={containerRef}>
             {loopCards.map((item, index) => (

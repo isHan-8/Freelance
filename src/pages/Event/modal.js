@@ -1,6 +1,6 @@
 import React from "react";
 import './modal.css'
-import close from '../assets/party.jpg'
+import close from '../../assets/party.jpg'
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null; 
 

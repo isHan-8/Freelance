@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Feed from './pages/Feed';
+import Feed from './pages/Feed/Feed';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import CreatePost from './pages/CreatePost';
@@ -25,8 +25,8 @@ import ViewDatingProfile from './pages/ViewDatingProfile';
 import Events from './pages/Events';
 import EventDetails from './pages/EventDetails';
 import CreateEvent from './pages/CreateEvent';
-import EventManage from './pages/EventManage'; // Import the component
-import TicketDetails from './pages/TicketDetails'; // Import the component
+import EventManage from './pages/EventManage';
+import TicketDetails from './pages/TicketDetails'; 
 
 import NotFound from './pages/NotFound';
 
@@ -39,16 +39,16 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Chat from './pages/Chat/Chat.js';
 // import ProfileSection from './pages/ProfileSection';
-import Filter from './pages/Filter';
-import Event from './pages/Event';
+import Filter from './pages/Filter/Filter.js';
+import Event from './pages/Event/Indexing.js';
 import LoginSignup from './pages/LoginSignup'
-import OriginalLogin from './pages/OriginalLogin'
-import Indexing from './pages/Indexing';
-import BookingDetails from './pages/BookingDetails';
-import Form from './pages/Form';
-import Ishane from './pages/Ishane.jsx';
-import DatingModule from './pages/DatingModule.jsx';
-import { ThemeProvider } from './ThemeContext.js'; // <-- Add this
+import OriginalLogin from './pages/Login/OriginalLogin.jsx'
+import Indexing from './pages/Event/Indexing';
+import BookingDetails from './pages/Event/BookingDetails';
+import Form from './pages/Form/Form.jsx';
+import Ishane from './pages/Profile/Ishane.jsx';
+import DatingModule from './pages/Dat/DatingModule.jsx';
+import { ThemeProvider } from './ThemeContext.js'; 
 
 function App() {
   return (

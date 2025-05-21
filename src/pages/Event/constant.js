@@ -1,8 +1,8 @@
-import party from "../assets/party.jpg"
-import party1 from "../assets/party1.jpg"
-import party2 from "../assets/party2.jpg"
-import party3 from "../assets/party3.jpg"
-import party4 from "../assets/party4.jpg"
+import party from "../../assets/party.jpg"
+import party1 from "../../assets/party1.jpg"
+import party2 from "../../assets/party2.jpg"
+import party3 from "../../assets/party3.jpg"
+import party4 from "../../assets/party4.jpg"
 
 export const card = [
   {

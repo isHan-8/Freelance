@@ -1,7 +1,7 @@
-import React, { useRef , useState , useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./filter.css";
 import { FiSearch } from "react-icons/fi";
-import Leftsidebar from "./LeftNavBar";
+import Leftsidebar from "../LeftNavBar";
 
 function Filter() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,7 +9,7 @@ function Filter() {
 
   const cities = ["delhi", "bangalore", "chennai", "mumbai", "hyderabad"];
 
-  const filteredCities = cities.filter(city =>
+  const filteredCities = cities.filter((city) =>
     city.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -23,41 +23,40 @@ function Filter() {
 
   const cityImages = {
     mumbai: "https://images.unsplash.com/photo-1580581096469-8afb38d3dbd5",
-    delhi: "https://plus.unsplash.com/premium_photo-1661919589683-f11880119fb7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVsaGl8ZW58MHx8MHx8fDA%3D",
-    bangalore: "https://plus.unsplash.com/premium_photo-1697730407028-1c602ffb2e81?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbmdhbG9yZXxlbnwwfHwwfHx8MA%3D%3D",
+    delhi:
+      "https://plus.unsplash.com/premium_photo-1661919589683-f11880119fb7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVsaGl8ZW58MHx8MHx8fDA%3D",
+    bangalore:
+      "https://plus.unsplash.com/premium_photo-1697730407028-1c602ffb2e81?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbmdhbG9yZXxlbnwwfHwwfHx8MA%3D%3D",
     chennai: "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
-    hyderabad: "https://images.unsplash.com/photo-1551161242-b5af797b7233?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww",
+    hyderabad:
+      "https://images.unsplash.com/photo-1551161242-b5af797b7233?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww",
     kolkata: "https://images.unsplash.com/photo-1607083203956-01c8d1f8a62e",
     jaipur: "https://images.unsplash.com/photo-1589645221675-3e3393b08478",
     pune: "https://images.unsplash.com/photo-1586199742238-c7a4c6815e48",
   };
   const [theme, setTheme] = useState("light");
 
-  // Apply theme to body
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const switchTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (
     <div className="page-container">
-      {/* Sidebar on the left */}
-      <Leftsidebar  theme={theme} switchTheme={switchTheme} />
+      <Leftsidebar theme={theme} switchTheme={switchTheme} />
 
-      {/* Main content on the right */}
       <div className="main-content">
         <header className="app-header">
           <div className="search-bar">
             <span className="search-icon">
-            <FiSearch size={29} className="search-icon-abs" />
-
+              <FiSearch size={29} className="search-icon-abs" />
             </span>
             <input
               type="text"
-              className="placing"
+              className="placing7"
               placeholder="Search for your city"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -70,7 +69,9 @@ function Filter() {
             filteredCities.map((city) => (
               <div className="city-icon" key={city}>
                 <img
-                  src={`${cityImages[city.toLowerCase()] || 'fallback_image_url_here'}`}
+                  src={`${
+                    cityImages[city.toLowerCase()] || "fallback_image_url_here"
+                  }`}
                   alt={city}
                 />
                 <p>{city.charAt(0).toUpperCase() + city.slice(1)}</p>
@@ -84,17 +85,35 @@ function Filter() {
         <section className="categories">
           <h2>Categories</h2>
           <div className="carousel-container">
-            <button className="arrow-btn arrow-left" onClick={scrollLeft}>‹</button>
+            <button className="arrow-btn arrow-left" onClick={scrollLeft}>
+              ‹
+            </button>
             <div className="category-wrapper">
               <div className="category-icons" ref={carouselRef}>
-                {["Drama", "Standup", "Dance", "Music", "Party", "Comedy", "Sports", "Art" , "Dance", "Music", "Party", "Comedy", "Sports"].map((category, idx) => (
+                {[
+                  "Drama",
+                  "Standup",
+                  "Dance",
+                  "Music",
+                  "Party",
+                  "Comedy",
+                  "Sports",
+                  "Art",
+                  "Dance",
+                  "Music",
+                  "Party",
+                  "Comedy",
+                  "Sports",
+                ].map((category, idx) => (
                   <div className="category-icon" key={idx}>
                     <p>{category}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <button className="arrow-btn arrow-right" onClick={scrollRight}>›</button>
+            <button className="arrow-btn arrow-right" onClick={scrollRight}>
+              ›
+            </button>
           </div>
         </section>
       </div>

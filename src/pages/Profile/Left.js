@@ -45,7 +45,7 @@ export default function Sidebar() {
             <FaBars className="icon" />
             <span>More</span>
           </li>
-          {/* Add Theme Toggle as another <li> */}
+
           <li onClick={toggleTheme}>
             {darkMode ? (
               <FaSun className="icon" />
@@ -55,7 +55,6 @@ export default function Sidebar() {
             <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
           </li>
         </ul>
-        {/* </ul> */}
       </nav>
       <div className="bottom">
         <button className="logout">

@@ -1,13 +1,11 @@
-/* Default light theme styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #eee;
   margin: 0;
   padding: 0;
-  color: black; /* Default text color for light theme */
+  color: black;
 }
 
-/* Form container */
 .form-container {
   max-width: 800px;
   background: white;
@@ -154,9 +152,9 @@ textarea {
 }
 
 .field.small-width {
-  width: 240px; /* or any desired width */
+  width: 240px;
 }
-/* The toggle button container */
+
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -169,16 +167,14 @@ textarea {
   transition: background-color 0.3s;
 }
 
-/* Switch styling */
 .switch {
-  position: fixed; /* Use fixed to keep it pinned on scroll */
+  position: fixed;
   top: 20px;
   right: 20px;
   width: 50px;
   height: 25px;
-  z-index: 1000; /* Ensure it's on top of other elements */
+  z-index: 1000;
 }
-
 
 .switch input {
   opacity: 0;
@@ -211,14 +207,13 @@ textarea {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* The round slider */
 .slider.round {
   border-radius: 34px;
 }
@@ -226,13 +221,12 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/* Dark theme */
+
 body.dark-mode {
   background: #333 !important;
   color: white;
 }
 
-/* Dark mode form container */
 body.dark-mode .form-container {
   background: #444;
   color: white;
@@ -265,7 +259,6 @@ body.dark-mode .create-btn:hover {
   background-color: #c62828;
 }
 
-/* The toggle button */
 .theme-toggle {
   position: absolute;
   top: 20px;
@@ -273,7 +266,7 @@ body.dark-mode .create-btn:hover {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
   border: none;
   border-radius: 25px;
@@ -283,7 +276,7 @@ body.dark-mode .create-btn:hover {
 body.dark-mode .theme-toggle {
   background: #444;
 }
-/* Dark theme styling for the button */
+
 body.dark-mode .theme-toggle {
   color: black;
 }

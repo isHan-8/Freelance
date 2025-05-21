@@ -75,8 +75,8 @@ body {
   font-size: 24px;
 }
 
-.placing {
-  width: 100%;
+.placing7 {
+  width: 110%  !important;
   padding: 10px 20px 10px 40px;
   font-size: 16px;
   font-family: "Lato", sans-serif;
@@ -84,9 +84,8 @@ body {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 50px;
-  color: #000; /* input text color */
-  background-color: #fff; /* white background */
-
+  color: #000;
+  background-color: #fff;
 }
 
 .placing::placeholder,
@@ -96,11 +95,9 @@ body {
 .placing::-ms-input-placeholder {
   color: var(--color-placeholder) !important;
   opacity: 0.6;
-  color: #000 !important;  /* black placeholder text */
-
+  color: #000 !important;
 }
 
-/* Input inside search bar */
 .search-bar input {
   border: none;
   outline: none;

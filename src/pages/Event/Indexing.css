@@ -16,7 +16,7 @@
 
 .event-card {
   flex: 0 0 60%;
-  height: 20rem !important; 
+  height: 20rem !important;
   width: 50rem !important;
   scroll-snap-align: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -44,9 +44,8 @@
   border-radius: 2rem 2rem 0rem 0rem !important;
 }
 
-
 .event-details {
-  margin:auto 0;
+  margin: auto 0;
   padding: 12px;
   color: #fff;
   display: flex;
@@ -66,7 +65,7 @@
   display: flex;
   font-size: 1rem;
   margin-right: 20px;
-  color:#ddd;
+  color: #ddd;
 }
 
 .price-details {
@@ -92,24 +91,23 @@
   font-weight: bold;
   display: inline-flex;
   align-items: center;
-  gap: 6px; /* gap between 729 and arrow */
+  gap: 6px;
 }
 
 .arrow {
   font-size: 1rem;
   color: #f6f5f5;
- margin-left: 10px;
- margin-top: 12px;
+  margin-left: 10px;
+  margin-top: 12px;
 }
-  
+
 .level {
   font-size: 0.85rem;
   color: #888;
   margin-top: 4px;
 }
 
-
-.location{
+.location {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -126,20 +124,20 @@
   align-items: flex-end;
   width: 100%;
 }
-.price-details h3{
+.price-details h3 {
   color: white;
   font-size: 1.9rem !important;
 }
 
-.ratings{
+.ratings {
   display: flex;
   margin-top: 0.1rem;
   margin-right: 150px;
 }
-.user-profile{
-  margin:5px 10px 0px 0px;
+.user-profile {
+  margin: 5px 10px 0px 0px;
 }
-.heading h3{
+.heading h3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +146,7 @@
   margin-top: 8px;
   margin-bottom: -10px;
 }
-.event-img img{
+.event-img img {
   width: 100%;
   height: 20rem;
 }
@@ -170,15 +168,37 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0.4, 0.7), 
-    transparent
-  );
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0.4, 0.7), transparent);
   pointer-events: none;
 }
 
+
+
+.calendar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 800px !important;
+  cursor: pointer;
+}
+
+.calendar-popup {
+  position: absolute;
+  top: 40%;
+  z-index: 1000;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background-color: white;
+  margin-left: -600px !important;
+}
 
 .search {
   position: absolute !important;
@@ -194,7 +214,7 @@
   border: 2px solid white !important;
   box-shadow: 0 0 25px rgb(22, 22, 22) !important;
   color: white !important;
-  z-index: 9999 !important;
+  z-index: 999 !important;
 }
 
 .search::placeholder {
@@ -206,7 +226,7 @@
 }
 
 .search-icon {
-  display: none !important; /* Hide any icons if needed */
+  display: none !important; 
 }
 
 .expanded-details {
@@ -240,8 +260,8 @@
 }
 .plus-icon {
   position: relative;
-  top: -44px; /* Adjust as needed */
-  right: -37.5px; /* Half of the width (75px / 2) */
+  top: -44px; 
+  right: -37.5px; 
   cursor: pointer;
   color: white;
   background-color: #9b9999;
@@ -252,7 +272,6 @@
   z-index: 10;
   margin-left: 650px;
 }
-
 
 .details-head {
   display: flex;
@@ -282,20 +301,22 @@
   margin-top: 20px;
   padding: 0 10px;
 }
-.left-details, .right-details {
+.left-details,
+.right-details {
   display: flex;
   flex-direction: column;
-  gap: 3px;  /* Very small gap between elements */
+  gap: 3px; 
 }
 
-.left-details p, .right-details p {
+.left-details p,
+.right-details p {
   margin: 0;
   padding: 0;
 }
 
 .date-time-row {
   display: flex;
-  gap: 35px; /* This creates space BETWEEN the date and time */
+  gap: 35px; 
   align-items: center;
 }
 
@@ -352,19 +373,18 @@
   margin-top: 1px;
 }
 
-
 .profile p {
   margin: 0;
   padding: 0;
-  line-height: 1.8; /* Optional: reduce line height */
+  line-height: 1.8; 
 }
 
 .rating {
-  margin-top: 2px; /* Optional: very small spacing */
+  margin-top: 2px;
   display: flex;
   align-items: center;
-  gap: 9px; /* Optional: gap between icon and number */
-  color:black;
+  gap: 9px; 
+  color: black;
   font-weight: 700;
 }
 
@@ -384,4 +404,267 @@ hr {
   border-top-right-radius: 30px;
   padding: 20px;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= Responsive Breakpoints ======= */
+@media (max-width: 1310px) {
+ .plus-icon {
+    margin-left: 600px;
+    width: 65px;
+    height: 60px;
+  }
+}
+@media (max-width: 1200px) {
+  .event-card {
+    flex: 0 0 70%;
+    width: 40rem !important;
+    height: 20rem !important;
+  }
+
+  .expanded-details-below {
+    width: 68vw;
+    padding: 60px 20px 20px 20px;
+    margin-bottom: 10px;
+  }
+
+  .plus-icon {
+    margin-left: 600px;
+    width: 65px;
+    height: 60px;
+  }
+  .calendar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 650px !important; 
+    cursor: pointer;
+  }
+
+  .calendar-popup {
+    position: absolute;
+    top: 40%;
+    z-index: 1000;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .event-card {
+    flex: 0 0 80%;
+    width: 90% !important;
+  }
+
+  .expanded-details-below {
+    width: 75vw;
+    padding: 60px 20px 20px 20px;
+    margin-bottom: 10px;
+  }
+  
+  .plus-icon {
+    margin-left: 500px !important;
+    width: 65px;
+    height: 60px;
+  }
+  .event-img img {
+    height: 14rem;
+  }
+
+  .event-details h2 {
+    font-size: 2.2rem;
+  }
+
+  .amount {
+    font-size: 1.8rem;
+  }
+
+  .expanded-details-below h5 {
+    font-size: 28px;
+    margin-top: -50px;
+  }
+
+  .plus-icon {
+    margin-left: 450px;
+    width: 55px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    flex: 0 0 95%;
+    padding: 15px;
+   
+    width: 40rem !important;
+    height: 20rem !important;
+  }
+
+  .slider-container {
+    gap: 15px;
+    padding: 30px 0;
+  }
+
+  .event-img img {
+    height: 12rem;
+  }
+
+  .event-details h2 {
+    font-size: 1.9rem;
+  }
+
+  .amount {
+    font-size: 1.6rem;
+  }
+ .plus-icon {
+    margin-left: 500px;
+    width: 65px;
+    height: 60px;
+  }
+  .expanded-details-below {
+    width: 90vw;
+    padding: 50px 15px 20px 15px;
+    margin: -70px auto 20px auto;
+  }
+
+  .expanded-details-below h5 {
+    font-size: 24px;
+    margin-top: -30px;
+  }
+
+  .details-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .artist-host-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search {
+    width: 85% !important;
+    font-size: 1.2rem !important;
+    padding: 14px 20px !important;
+    height: auto !important;
+  }
+
+  .search::placeholder {
+    font-size: 1.2rem !important;
+  }
+
+  .plus-icon {
+    margin-left: 55%;
+    width: 50px;
+    height: 45px;
+    padding: 10px;
+  }
+
+  .part2 {
+    top: 120px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    flex: 0 0 100%;
+    padding: 12px;
+  }
+
+  .event-img img {
+    height: 11rem;
+  }
+
+  .event-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .amount {
+    font-size: 1.4rem;
+  }
+
+  .currency {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  .slider-container {
+    gap: 10px;
+    padding: 20px 0;
+    scroll-snap-align: none;
+  }
+
+  .expanded-details-below {
+    width: 94vw;
+    padding: 40px 10px 15px 10px;
+    margin: -60px auto 20px auto;
+  }
+
+  .expanded-details-below h5 {
+    font-size: 20px;
+    margin-top: -20px;
+  }
+
+  .details-head {
+    font-size: 16px;
+    padding: 0 5px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .section-text {
+    font-size: 13.5px;
+  }
+
+  .plus-icon {
+    margin-left: 45%;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .register-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.calendar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: -350px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 400px;
+  cursor: pointer;
+}
+
+.calendar-popup {
+  position: absolute;
+  top: 40%;
+  z-index: 1000;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 600px;
 }

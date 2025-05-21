@@ -168,7 +168,7 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* Tab Content (Now also inside the same .profile-tabs-container) */}
+   
           <div className="content-container">
             {activeTab === "POSTS" && (
               <div className="content">

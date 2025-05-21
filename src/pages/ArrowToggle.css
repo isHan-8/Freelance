@@ -1,0 +1,25 @@
+.toggleArrow {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  background-color: var(--title-color);
+  color: var(--container-color);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.toggleArrow:hover {
+  background-color: var(--text-color);
+}
+
+.closeBtn {
+  font-size: 24px;
+  color: var(--text-color);
+  text-align: right;
+  cursor: pointer;
+  padding: 5px 10px;
+}

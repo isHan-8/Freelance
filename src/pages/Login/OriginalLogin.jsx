@@ -9,11 +9,10 @@ const LoginPage = () => {
 
   return (
     <div className={`login-container ${isDark ? "dark" : "light"}`}>
-   <label className="switch">
-  <input type="checkbox" checked={isDark} onChange={toggleTheme} />
-  <span className="slider round"></span>
-</label>
-
+      <label className="switch">
+        <input type="checkbox" checked={isDark} onChange={toggleTheme} />
+        <span className="slider round"></span>
+      </label>
 
       <div className="login-left">
         <h1 className="login-title">LOGIN</h1>

@@ -60,7 +60,6 @@ function ChatApp() {
 
   const [theme, setTheme] = useState("light");
 
-  // Apply theme to body
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -76,10 +75,8 @@ function ChatApp() {
 
   return (
     <div className="messenger-container">
-      {/* Pass theme and switchTheme to LeftNavBar */}
       <LeftNavBar theme={theme} switchTheme={switchTheme} />
 
-      {/* Left sidebar */}
       <div className="sidebar1">
         <div className="sidebar-header">
           <h2>ish18an</h2>
@@ -113,7 +110,6 @@ function ChatApp() {
         </div>
       </div>
 
-      {/* Right content */}
       <div className="chat-content">
         <div className="chat-header">
           <div className="selected-avatar">

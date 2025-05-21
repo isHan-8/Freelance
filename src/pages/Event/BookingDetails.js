@@ -1,13 +1,15 @@
 import React from "react";
 import "./bookingDetails.css";
-import Modal from "../pages/modal";
+import Modal from "../Event/modal";
 
 const BookingDetails = ({ isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="booking-wrapper">
         <div className="booking-inner">
-      <button className="back-arrow" onClick={onClose}>←</button>
+          <button className="back-arrow" onClick={onClose}>
+            ←
+          </button>
 
           <h2 className="booking-title">Booking Details</h2>
           <div className="section-heading">
@@ -25,7 +27,6 @@ const BookingDetails = ({ isOpen, onClose }) => {
                     valid for one hour
                   </p>
                   <p className="plan-price">749</p>
-                  {/* {i === 0 && <span className="check-mark">✔</span>} */}
                 </div>
               ))}
           </div>

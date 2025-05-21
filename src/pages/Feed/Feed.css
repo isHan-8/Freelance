@@ -1,0 +1,15 @@
+.appLayout {
+  display: flex;
+  height: 100vh;
+  width: 130%;
+  background-color: var(--container-color);
+  overflow: hidden; 
+
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.appLayout::-webkit-scrollbar {
+  display: none; 
+}
